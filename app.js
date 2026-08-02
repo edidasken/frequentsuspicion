@@ -30,6 +30,10 @@ function cleanSource(raw, title) {
   let lines = raw.replace(/\r/g, "").split("\n");
   const hashIndex = lines.findIndex(line => line.trim().startsWith("#"));
   if (hashIndex >= 0) lines = lines.slice(0, hashIndex);
+  lines = lines.filter(line => !/^(?:@FrequentSuspicion\b|.*\bby\s+@FrequentSuspicion\b|A Song\/Video about\b|Music, lyrics, and visual concept\b)/i.test(line.trim()));
+
+  // Publishing/performance cues are not lyrics and should never enter the reader.
+  lines = lines.filter(line => !/^\s*(?:\*{1,2})?(?:ending\s+(?:with|in)\b|guitar\s+solo\b|fade\s+(?:out|to)\b|instrumental\s+(?:break|solo)\b|music\s+(?:continues|fades)\b).*?(?:\*{1,2})?\s*$/i.test(line));
 
   const firstSection = lines.findIndex(line => /^\s*[[(](intro|opening|verse|chorus|pre-chorus|build|breakdown|bridge|interlude|instrumental|outro|final|closing|repeat)/i.test(line));
   if (firstSection > 0) lines = lines.slice(firstSection);
@@ -54,7 +58,10 @@ function renderLyrics(raw) {
     const section = trimmed.match(/^[[(](.+?)[\])]/);
     if (section) {
       flush();
-      current.label = section[1];
+      current.label = section[1]
+        .replace(/\*+/g, "")
+        .replace(/,?\s*(?:ending\s+(?:with|in)|with)\s+(?:a\s+)?(?:guitar\s+)?solo.*$/i, "")
+        .trim();
     } else {
       current.body.push(line.replace(/\s+$/, ""));
     }

@@ -25,7 +25,7 @@
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
-  <link rel="stylesheet" href="styles.css?v=20260802-8">
+  <link rel="stylesheet" href="styles.css?v=20260802-10">
 </head>
 <body>
   <div class="grain" aria-hidden="true"></div>
@@ -35,8 +35,9 @@
     <nav class="topbar" aria-label="Primary navigation">
       <a class="wordmark" href="#top"><span>F</span>requent<span>S</span>uspicion</a>
       <div class="nav-links">
-        <a href="#album">Interactive Album</a>
-        <a href="about.html">About Greg</a>
+        <a href="#album">Album</a>
+        <a href="about.html">About</a>
+        <button type="button" data-open-prayer>Prayer</button>
         <a class="youtube-music-icon" href="https://music.youtube.com/playlist?list=PLYnXteIAoUN8" target="_blank" rel="noreferrer" aria-label="Listen on YouTube Music" title="Listen on YouTube Music"><span aria-hidden="true"></span></a>
       </div>
     </nav>
@@ -175,9 +176,49 @@
         <button type="button" role="menuitemradio" data-reader-scale="1.32">XXXL</button>
       </div>
     </div>
+    <button class="care-trigger" type="button" aria-label="Open biblical counseling and apologetics" title="Biblical Counseling &amp; Apologetics" aria-haspopup="dialog" aria-expanded="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5c2.8-.8 5.5-.2 8 1.8v12c-2.5-2-5.2-2.6-8-1.8v-12Z"/><path d="M20 5.5c-2.8-.8-5.5-.2-8 1.8v12c2.5-2 5.2-2.6 8-1.8v-12Z"/><path d="M12 7.3v12.2"/></svg>
+    </button>
     <button class="signs-trigger" type="button" aria-label="Know the signs of abuse" title="Know the Signs" aria-haspopup="dialog" aria-expanded="false">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.8 20h18.4L12 3Z"/><path d="M12 8.2v5.9M12 17.5v.1"/></svg>
     </button>
+  </div>
+
+  <div class="care-layer" hidden>
+    <div class="care-backdrop" data-care-close></div>
+    <section class="care-dialog" role="dialog" aria-modal="true" aria-labelledby="care-title" tabindex="-1">
+      <header class="care-header">
+        <div>
+          <span>Scripture-centered help</span>
+          <h2 id="care-title">Counsel &amp; Defense</h2>
+        </div>
+        <button class="care-close" type="button" data-care-close aria-label="Close counseling and apologetics">×</button>
+      </header>
+      <div class="care-app">
+        <div class="care-toolbar">
+          <div class="care-tabs" role="tablist" aria-label="Choose a library">
+            <button type="button" role="tab" id="care-tab-counseling" aria-controls="care-library" aria-selected="true" data-care-mode="counseling">Biblical Counseling</button>
+            <button type="button" role="tab" id="care-tab-apologetics" aria-controls="care-library" aria-selected="false" data-care-mode="apologetics">Apologetics</button>
+          </div>
+          <label class="care-search">
+            <span class="sr-only">Search this library</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.2 4.2"/></svg>
+            <input type="search" data-care-search placeholder="Search counseling topics…" autocomplete="off">
+          </label>
+        </div>
+        <div class="care-notice" data-care-notice>
+          <strong>Biblical counsel for real life.</strong>
+          <span>Explore a topic, read Scripture in context, and identify a faithful next step.</span>
+        </div>
+        <div class="care-layout" id="care-library" role="tabpanel" aria-labelledby="care-tab-counseling">
+          <aside class="care-catalog" aria-label="Library topics">
+            <div class="care-catalog-meta"><span data-care-count>Loading library…</span><button type="button" data-care-clear hidden>Clear search</button></div>
+            <div class="care-list" data-care-list></div>
+          </aside>
+          <article class="care-detail" data-care-detail aria-live="polite"></article>
+        </div>
+      </div>
+    </section>
   </div>
 
   <div class="signs-layer" hidden>
@@ -221,7 +262,8 @@
     </section>
   </div>
 
-  <script src="app.js?v=20260802-4" defer></script>
+  <script src="app.js?v=20260802-5" defer></script>
+  <script type="module" src="care.js?v=20260802-1"></script>
   <script src="accessibility.js?v=1" defer></script>
   <script src="pwa.js?v=1" defer></script>
 </body>
