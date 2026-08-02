@@ -116,7 +116,7 @@ main { background: radial-gradient(circle at 80% 10%, rgba(105,111,55,.12), tran
 .lyric-section.is-breakdown p { font-family: var(--display); font-size: 1.2em; letter-spacing: .03em; color: var(--bone); }
 
 .story { min-height: 900px; display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: #080a07; }
-.story-art { min-height: 760px; background: linear-gradient(0deg, rgba(5,6,5,.25), rgba(5,6,5,.05)), url("assets/banner.png") 18% center / cover; filter: saturate(.72); }
+.story-art { min-height: 760px; background: linear-gradient(0deg, rgba(5,6,5,.25), rgba(5,6,5,.05)), url("assets/banner-wordless.png") 18% center / cover; filter: saturate(.72); }
 .story-copy { display: flex; flex-direction: column; justify-content: center; padding: clamp(70px, 9vw, 140px) clamp(36px, 7vw, 110px); }
 .story-copy h2 { margin: 0 0 30px; font: 800 clamp(3.2rem, 6vw, 6rem)/.88 var(--display); text-transform: uppercase; letter-spacing: -.025em; }
 .story-copy .lead { color: var(--bone); font-size: 1.36rem; line-height: 1.6; }
@@ -143,7 +143,7 @@ main { background: radial-gradient(circle at 80% 10%, rgba(105,111,55,.12), tran
 .act-card button { position: absolute; left: 48px; bottom: 45px; border: 0; border-bottom: 1px solid var(--olive); padding: 0 0 7px; background: transparent; color: var(--bone); font: 700 .83rem var(--display); text-transform: uppercase; letter-spacing: .12em; cursor: pointer; }
 .act-card button:hover { color: var(--olive-bright); }
 
-.closing-commission { min-height: 86svh; display: grid; place-items: center; text-align: center; padding: 90px 24px; position: relative; background: linear-gradient(rgba(5,7,5,.54), rgba(5,7,5,.82)), url("assets/banner.png") 78% center / cover; }
+.closing-commission { min-height: 86svh; display: grid; place-items: center; text-align: center; padding: 90px 24px; position: relative; background: linear-gradient(rgba(5,7,5,.54), rgba(5,7,5,.82)), url("assets/banner-wordless.png") 78% center / cover; }
 .closing-copy { max-width: 950px; }
 .closing-copy h2 { margin: 0 0 28px; font: 800 clamp(3.8rem, 8vw, 7.8rem)/.87 var(--display); text-transform: uppercase; }
 .closing-copy h2 span { color: var(--olive-bright); }
@@ -361,7 +361,7 @@ footer { display: flex; justify-content: space-between; gap: 40px; padding: 60px
 .prayer-success { display: grid; place-items: center; min-height: 440px; padding: 50px 34px; text-align: center; }
 .prayer-success > span { width: 64px; height: 64px; display: grid; place-items: center; margin-bottom: 22px; border-radius: 50%; background: #777d42; color: #fff; font-size: 2rem; }
 .prayer-success p { max-width: 480px; margin: 7px auto 25px; color: #55594d; }
-.about-closing { min-height: 80svh; display: grid; place-content: center; text-align: center; padding: 100px 24px; background: linear-gradient(rgba(5,6,5,.72), rgba(5,6,5,.82)), url("assets/banner.png") center / cover; }
+.about-closing { min-height: 80svh; display: grid; place-content: center; text-align: center; padding: 100px 24px; background: linear-gradient(rgba(5,6,5,.72), rgba(5,6,5,.82)), url("assets/banner-wordless.png") center / cover; }
 .about-closing h2 { margin: 0 0 30px; font: 800 clamp(4rem, 9vw, 8rem)/.86 var(--display); text-transform: uppercase; }
 .about-closing h2 span { color: var(--olive-bright); }
 
@@ -453,9 +453,9 @@ footer { display: flex; justify-content: space-between; gap: 40px; padding: 60px
   .reckoning-timeline { grid-template-columns: 1fr; margin-top: 38px; }
   .reckoning-timeline article { min-height: 0; }
   .reckoning-timeline article + article { border-left: 0; border-top: 1px solid var(--line); }
-  .story-art { width: calc(100% - 20px); min-height: 0; aspect-ratio: 4 / 5; margin: 10px auto 0; background-image: linear-gradient(0deg, rgba(5,6,5,.25), rgba(5,6,5,.05)), url("assets/album-cover.png"); background-position: center; }
-  .closing-commission { background-image: linear-gradient(rgba(5,7,5,.54), rgba(5,7,5,.82)), url("assets/album-cover.png"); background-position: center; }
-  .about-closing { background-image: linear-gradient(rgba(5,6,5,.72), rgba(5,6,5,.82)), url("assets/album-cover.png"); background-position: center; }
+  .story-art { width: calc(100% - 20px); min-height: 0; aspect-ratio: 4 / 5; margin: 10px auto 0; background-image: linear-gradient(0deg, rgba(5,6,5,.25), rgba(5,6,5,.05)), url("assets/banner-wordless.png"); background-position: 18% center; }
+  .closing-commission { background-image: linear-gradient(rgba(5,7,5,.54), rgba(5,7,5,.82)), url("assets/banner-wordless.png"); background-position: 78% center; }
+  .about-closing { background-image: linear-gradient(rgba(5,6,5,.72), rgba(5,6,5,.82)), url("assets/banner-wordless.png"); background-position: center; }
   .pillars { grid-template-columns: 1fr; }
   .pillars article, .pillars article:nth-child(2) { min-height: 300px; border-right: 0; border-bottom: 1px solid var(--line); }
   .pillars h3 { margin-top: 50px; }

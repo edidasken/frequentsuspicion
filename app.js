@@ -1,7 +1,7 @@
 const acts = [
-  { number: "I", title: "The Wreckage", note: "Confession without disguise. The fire is named, the choices owned, and the heart brought into the light.", image: "assets/banner.png" },
+  { number: "I", title: "The Wreckage", note: "Confession without disguise. The fire is named, the choices owned, and the heart brought into the light.", image: "assets/album-cover.png" },
   { number: "II", title: "The Rebuilding", note: "Surrender becomes formation. God teaches the wounded heart to live, love, remain, and remember its birthright.", image: "assets/album-cover.png" },
-  { number: "III", title: "The Reckoning", note: "Discernment sharpens. Masks fall, silence is confronted, and mercy refuses to abandon justice.", image: "assets/banner.png" },
+  { number: "III", title: "The Reckoning", note: "Discernment sharpens. Masks fall, silence is confronted, and mercy refuses to abandon justice.", image: "assets/album-cover.png" },
   { number: "IV", title: "The Commission", note: "The inward war becomes a warning, a witness, and a legacy carried beyond the ruins.", image: "assets/album-cover.png" }
 ];
 
