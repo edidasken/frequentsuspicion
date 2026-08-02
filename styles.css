@@ -50,8 +50,8 @@ main { background: radial-gradient(circle at 80% 10%, rgba(105,111,55,.12), tran
 .section-intro > p { margin: 0; color: var(--bone-dim); max-width: 560px; }
 .interactive-album { padding: 120px 0; border-top: 1px solid var(--line); background: linear-gradient(180deg, #090b08, #070806); }
 .album-console { width: min(1500px, calc(100% - 48px)); height: min(780px, 82svh); min-height: 660px; margin: auto; display: grid; grid-template-columns: 275px minmax(430px, 1.15fr) minmax(360px, .85fr); border: 1px solid var(--line); background: #070806; box-shadow: 0 40px 100px rgba(0,0,0,.42); overflow: hidden; }
-.console-tracks { min-width: 0; overflow: auto; border-right: 1px solid var(--line); scrollbar-width: thin; background: #0a0c09; }
-.console-stage { min-width: 0; display: flex; flex-direction: column; border-right: 1px solid var(--line); }
+.console-tracks { min-width: 0; min-height: 0; overflow: auto; border-right: 1px solid var(--line); scrollbar-width: thin; background: #0a0c09; }
+.console-stage { min-width: 0; min-height: 0; display: flex; flex-direction: column; border-right: 1px solid var(--line); }
 .video-shell { position: relative; aspect-ratio: 16/9; background: #000; border-bottom: 1px solid var(--line); }
 .video-shell iframe { width: 100%; height: 100%; border: 0; display: block; }
 .now-playing { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 32px 36px 20px; }
@@ -62,12 +62,13 @@ main { background: radial-gradient(circle at 80% 10%, rgba(105,111,55,.12), tran
 .transport button:hover { background: var(--olive); border-color: var(--olive); color: var(--ink); }
 .transport span { color: #7e806f; font: 700 .68rem var(--display); letter-spacing: .12em; }
 .active-act-note { margin: 0; padding: 0 36px 30px; color: #878a7c; font-size: .82rem; line-height: 1.55; }
-.console-lyrics { min-width: 0; display: flex; flex-direction: column; background: linear-gradient(180deg, rgba(139,145,69,.07), transparent 35%); }
+.console-lyrics { min-width: 0; min-height: 0; overflow: hidden; display: flex; flex-direction: column; background: linear-gradient(180deg, rgba(139,145,69,.07), transparent 35%); }
 .lyrics-toolbar { min-height: 90px; display: flex; justify-content: space-between; gap: 20px; align-items: center; padding: 22px 26px; border-bottom: 1px solid var(--line); }
 .lyrics-toolbar span { display: block; color: var(--olive-bright); font: 700 .62rem var(--display); text-transform: uppercase; letter-spacing: .17em; }
 .lyrics-toolbar strong { display: block; max-width: 240px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font: 700 1.1rem var(--display); text-transform: uppercase; }
 .lyrics-toolbar a { flex: 0 0 auto; color: #898b80; text-decoration: none; font: 700 .6rem var(--display); text-transform: uppercase; letter-spacing: .12em; }
 .lyrics-scroll { flex: 1; min-height: 0; overflow: auto; padding: 38px 34px 80px; scrollbar-color: var(--olive) transparent; }
+.lyrics-scroll:focus-visible { outline: 2px solid var(--olive-bright); outline-offset: -3px; }
 .lyrics-scroll .lyric-section { margin-bottom: 30px; }
 .lyrics-scroll .lyric-section p { font-size: .92rem; line-height: 1.85; }
 
@@ -209,7 +210,8 @@ footer { display: flex; justify-content: space-between; gap: 40px; padding: 60px
   .about-hero-copy { text-align: center; padding-top: 40px; }
   .about-lead { margin-left: auto; margin-right: auto; }
   .identity-line { justify-content: center; }
-  .name-origin { grid-template-columns: 1fr; }
+  .name-origin { grid-template-columns: minmax(0, 1fr); }
+  .origin-title, .origin-copy { min-width: 0; }
   .origin-title { position: static; }
   .about-confession { grid-template-columns: 1fr; gap: 20px; }
   .confession-number { line-height: .8; }
@@ -232,6 +234,7 @@ footer { display: flex; justify-content: space-between; gap: 40px; padding: 60px
   .lyrics-toolbar { align-items: flex-start; }
   .lyrics-toolbar a { display: none; }
   .lyrics-scroll { padding: 30px 24px 60px; }
+  .origin-title h2 span { display: block; font-size: clamp(2.1rem, 10vw, 3rem); letter-spacing: -.03em; }
   .story-art { min-height: 500px; }
   .pillars { grid-template-columns: 1fr; }
   .pillars article, .pillars article:nth-child(2) { min-height: 300px; border-right: 0; border-bottom: 1px solid var(--line); }
