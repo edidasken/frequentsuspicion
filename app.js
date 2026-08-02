@@ -89,6 +89,48 @@ const lyricCache = new Map();
 let activeIndex = 0;
 let youtubePlayer = null;
 let youtubePlayerReady = false;
+let selectionMethod = "initial_load";
+let playingVideoId = "";
+let progressTimer = null;
+let progressMilestones = new Set();
+
+function trackAlbumEvent(eventName, track = tracks[activeIndex], parameters = {}) {
+  const act = acts[track.act];
+  window.fsAnalytics?.track(eventName, {
+    song_title: track.title,
+    song_number: track.number,
+    song_slug: track.slug,
+    video_id: track.video,
+    movement_number: track.act + 1,
+    movement_name: `Act ${act.number} · ${act.title}`,
+    ...parameters
+  });
+}
+
+function stopProgressTracking() {
+  if (progressTimer) window.clearInterval(progressTimer);
+  progressTimer = null;
+}
+
+function startProgressTracking() {
+  stopProgressTracking();
+  progressTimer = window.setInterval(() => {
+    if (!youtubePlayerReady || !youtubePlayer) return;
+    const duration = youtubePlayer.getDuration();
+    const currentTime = youtubePlayer.getCurrentTime();
+    if (!duration || !Number.isFinite(currentTime)) return;
+
+    const percent = Math.floor((currentTime / duration) * 100);
+    [25, 50, 75].forEach(milestone => {
+      if (percent < milestone || progressMilestones.has(milestone)) return;
+      progressMilestones.add(milestone);
+      trackAlbumEvent("song_progress", tracks[activeIndex], {
+        percent_complete: milestone,
+        selection_method: selectionMethod
+      });
+    });
+  }, 1000);
+}
 
 function playerUrl(videoId, autoplay) {
   const origin = encodeURIComponent(window.location.origin);
@@ -112,8 +154,30 @@ window.onYouTubeIframeAPIReady = () => {
         youtubePlayer.setOption("captions", "track", {});
       },
       onStateChange: event => {
+        const track = tracks[activeIndex];
+        const playerVideoId = youtubePlayer.getVideoData()?.video_id;
+        if (playerVideoId && playerVideoId !== track.video) return;
+        if (event.data === window.YT.PlayerState.PLAYING) {
+          if (playingVideoId !== track.video) {
+            playingVideoId = track.video;
+            progressMilestones = new Set();
+            trackAlbumEvent("song_start", track, { selection_method: selectionMethod });
+          }
+          startProgressTracking();
+        } else if (event.data === window.YT.PlayerState.PAUSED) {
+          stopProgressTracking();
+          trackAlbumEvent("song_pause", track, {
+            elapsed_seconds: Math.round(youtubePlayer.getCurrentTime() || 0),
+            selection_method: selectionMethod
+          });
+        }
         if (event.data === window.YT.PlayerState.ENDED && activeIndex < tracks.length - 1) {
-          loadTrack(activeIndex + 1, true);
+          stopProgressTracking();
+          trackAlbumEvent("song_complete", track, { selection_method: selectionMethod });
+          loadTrack(activeIndex + 1, true, "automatic_next");
+        } else if (event.data === window.YT.PlayerState.ENDED) {
+          stopProgressTracking();
+          trackAlbumEvent("song_complete", track, { selection_method: selectionMethod });
         }
       }
     }
@@ -127,8 +191,12 @@ function initializeYouTubeApi() {
   document.head.appendChild(script);
 }
 
-async function loadTrack(index, autoplay = false) {
+async function loadTrack(index, autoplay = false, method = "direct") {
+  stopProgressTracking();
   activeIndex = (index + tracks.length) % tracks.length;
+  selectionMethod = method;
+  playingVideoId = "";
+  progressMilestones = new Set();
   const track = tracks[activeIndex];
   const act = acts[track.act];
   document.querySelectorAll(".track-link").forEach(button => button.classList.toggle("active", Number(button.dataset.index) === activeIndex));
@@ -142,6 +210,10 @@ async function loadTrack(index, autoplay = false) {
   document.querySelector("#active-act-note").textContent = act.note;
   document.querySelector("#youtube-link").href = `https://www.youtube.com/watch?v=${track.video}`;
   setPlayerTrack(track, autoplay);
+  trackAlbumEvent("song_view", track, {
+    selection_method: method,
+    autoplay_requested: autoplay
+  });
 
   const lyricsPanel = document.querySelector("#active-lyrics");
   lyricsPanel.innerHTML = "<div class='loading'>Opening the lyrics…</div>";
@@ -162,15 +234,17 @@ function buildActGrid() {
 
 buildNavigation();
 buildActGrid();
-document.querySelectorAll(".track-link").forEach(button => button.addEventListener("click", () => loadTrack(Number(button.dataset.index), true)));
+document.querySelectorAll(".track-link").forEach(button => button.addEventListener("click", () => loadTrack(Number(button.dataset.index), true, "track_list")));
 document.querySelectorAll("[data-start]").forEach(button => button.addEventListener("click", () => {
+  const track = tracks[Number(button.dataset.start)];
+  trackAlbumEvent("movement_start", track, { selection_method: "movement_card" });
   document.querySelector("#album").scrollIntoView({ behavior: "smooth" });
-  loadTrack(Number(button.dataset.start), true);
+  loadTrack(Number(button.dataset.start), true, "movement_card");
 }));
-document.querySelector("#previous-track").addEventListener("click", () => loadTrack(activeIndex - 1, true));
-document.querySelector("#next-track").addEventListener("click", () => loadTrack(activeIndex + 1, true));
+document.querySelector("#previous-track").addEventListener("click", () => loadTrack(activeIndex - 1, true, "previous_button"));
+document.querySelector("#next-track").addEventListener("click", () => loadTrack(activeIndex + 1, true, "next_button"));
 initializeYouTubeApi();
-loadTrack(0).catch(error => {
+loadTrack(0, false, "initial_load").catch(error => {
   console.error(error);
   document.querySelector("#active-lyrics").innerHTML = "<div class='loading'>The lyrics could not be opened.</div>";
 });
