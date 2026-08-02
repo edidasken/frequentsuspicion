@@ -85,7 +85,7 @@ let youtubePlayerReady = false;
 
 function playerUrl(videoId, autoplay) {
   const origin = encodeURIComponent(window.location.origin);
-  return `https://www.youtube-nocookie.com/embed/${videoId}?rel=0&enablejsapi=1&playsinline=1&origin=${origin}${autoplay ? "&autoplay=1" : ""}`;
+  return `https://www.youtube-nocookie.com/embed/${videoId}?rel=0&enablejsapi=1&playsinline=1&cc_load_policy=0&origin=${origin}${autoplay ? "&autoplay=1" : ""}`;
 }
 
 function setPlayerTrack(track, autoplay) {
@@ -100,7 +100,10 @@ function setPlayerTrack(track, autoplay) {
 window.onYouTubeIframeAPIReady = () => {
   youtubePlayer = new window.YT.Player("video-player", {
     events: {
-      onReady: () => { youtubePlayerReady = true; },
+      onReady: () => {
+        youtubePlayerReady = true;
+        youtubePlayer.setOption("captions", "track", {});
+      },
       onStateChange: event => {
         if (event.data === window.YT.PlayerState.ENDED && activeIndex < tracks.length - 1) {
           loadTrack(activeIndex + 1, true);
