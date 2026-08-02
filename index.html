@@ -2,8 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#090b08">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="FrequentSuspicion">
   <meta name="description" content="The official lyric collection for Carry It Forward: From Wreckage to Redemption by FrequentSuspicion.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://edidasken.github.io/frequentsuspicion/">
@@ -18,7 +22,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Libre+Franklin:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260802-4">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
+  <link rel="stylesheet" href="styles.css?v=20260802-6">
 </head>
 <body>
   <div class="grain" aria-hidden="true"></div>
@@ -112,7 +119,7 @@
         <p class="eyebrow">Behind FrequentSuspicion</p>
         <h2>Faith spoken from inside the wreckage.</h2>
         <p class="lead">FrequentSuspicion is Christian rock born from repentance, responsibility, spiritual conflict, and the severe mercy of God.</p>
-        <p>I write as a husband, a father of two daughters, and a veteran carrying the aftermath of the battlefield and PTSD—not as someone standing above the people listening, but as a man forced to confront himself.</p>
+        <p>I write as a father of two daughters and a veteran carrying the aftermath of the battlefield and PTSD—not as someone standing above the people listening, but as a man forced to confront himself.</p>
         <p>These songs come from broken marriages, damaged trust, spiritual failure, church silence, wounded relationships, and the recognition that trauma may explain part of my struggle, but it cannot excuse the harm I caused. The lyrics refuse to make me the hero. They name pride, secrecy, compromise, coercion, hypocrisy, and the cost of ignoring truth.</p>
         <p>The purpose is not confession for spectacle. It is to show that repentance requires honesty, biblical love requires courage, and grace is strong enough to enter the truth without pretending the wreckage never happened.</p>
         <a class="story-link" href="about.html">Meet Greg and read the full story →</a>
@@ -156,6 +163,7 @@
     </div>
   </footer>
 
-  <script src="app.js?v=20260802-2" defer></script>
+  <script src="app.js?v=20260802-3" defer></script>
+  <script src="pwa.js?v=1" defer></script>
 </body>
 </html>

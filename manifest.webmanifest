@@ -1,0 +1,33 @@
+{
+  "id": "./",
+  "name": "FrequentSuspicion",
+  "short_name": "FS",
+  "description": "Christian rock born from wreckage, repentance, truth, and the mercy of God.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#090b08",
+  "theme_color": "#090b08",
+  "categories": ["music", "entertainment"],
+  "icons": [
+    {
+      "src": "assets/icons/pwa-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/pwa-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/pwa-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

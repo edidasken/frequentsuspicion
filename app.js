@@ -80,6 +80,42 @@ function buildNavigation() {
 
 const lyricCache = new Map();
 let activeIndex = 0;
+let youtubePlayer = null;
+let youtubePlayerReady = false;
+
+function playerUrl(videoId, autoplay) {
+  const origin = encodeURIComponent(window.location.origin);
+  return `https://www.youtube-nocookie.com/embed/${videoId}?rel=0&enablejsapi=1&playsinline=1&origin=${origin}${autoplay ? "&autoplay=1" : ""}`;
+}
+
+function setPlayerTrack(track, autoplay) {
+  if (youtubePlayerReady && youtubePlayer) {
+    if (autoplay) youtubePlayer.loadVideoById(track.video);
+    else youtubePlayer.cueVideoById(track.video);
+    return;
+  }
+  document.querySelector("#video-player").src = playerUrl(track.video, autoplay);
+}
+
+window.onYouTubeIframeAPIReady = () => {
+  youtubePlayer = new window.YT.Player("video-player", {
+    events: {
+      onReady: () => { youtubePlayerReady = true; },
+      onStateChange: event => {
+        if (event.data === window.YT.PlayerState.ENDED && activeIndex < tracks.length - 1) {
+          loadTrack(activeIndex + 1, true);
+        }
+      }
+    }
+  });
+};
+
+function initializeYouTubeApi() {
+  const script = document.createElement("script");
+  script.src = "https://www.youtube.com/iframe_api";
+  script.async = true;
+  document.head.appendChild(script);
+}
 
 async function loadTrack(index, autoplay = false) {
   activeIndex = (index + tracks.length) % tracks.length;
@@ -95,7 +131,7 @@ async function loadTrack(index, autoplay = false) {
   document.querySelector("#track-position").textContent = `${String(track.number).padStart(2, "0")} / ${tracks.length}`;
   document.querySelector("#active-act-note").textContent = act.note;
   document.querySelector("#youtube-link").href = `https://www.youtube.com/watch?v=${track.video}`;
-  document.querySelector("#video-player").src = `https://www.youtube-nocookie.com/embed/${track.video}?rel=0${autoplay ? "&autoplay=1" : ""}`;
+  setPlayerTrack(track, autoplay);
 
   const lyricsPanel = document.querySelector("#active-lyrics");
   lyricsPanel.innerHTML = "<div class='loading'>Opening the lyrics…</div>";
@@ -123,6 +159,7 @@ document.querySelectorAll("[data-start]").forEach(button => button.addEventListe
 }));
 document.querySelector("#previous-track").addEventListener("click", () => loadTrack(activeIndex - 1, true));
 document.querySelector("#next-track").addEventListener("click", () => loadTrack(activeIndex + 1, true));
+initializeYouTubeApi();
 loadTrack(0).catch(error => {
   console.error(error);
   document.querySelector("#active-lyrics").innerHTML = "<div class='loading'>The lyrics could not be opened.</div>";
