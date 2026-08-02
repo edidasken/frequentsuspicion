@@ -180,6 +180,17 @@ footer { display: flex; justify-content: space-between; gap: 40px; padding: 60px
 .confession-number { color: rgba(231,225,207,.055); font: 800 clamp(10rem, 25vw, 23rem)/.6 var(--display); }
 .about-confession h2 { max-width: 900px; margin: 0 0 30px; font: 800 clamp(3.3rem, 6vw, 6.2rem)/.88 var(--display); text-transform: uppercase; }
 .about-confession p:not(.eyebrow) { max-width: 760px; color: #929589; }
+.about-confession.reckoning { align-items: start; background: radial-gradient(circle at 22% 20%, rgba(139,145,69,.1), transparent 27%), #090b08; }
+.reckoning .confession-number { position: sticky; top: 150px; }
+.reckoning-copy { width: 100%; max-width: 920px; }
+.reckoning-copy > p:not(.eyebrow) { max-width: 820px; font-size: 1.02rem; line-height: 1.78; }
+.reckoning-timeline { max-width: 860px; margin: 50px 0 58px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border: 1px solid var(--line); background: rgba(4,5,4,.46); }
+.reckoning-timeline article { min-height: 225px; padding: 30px; position: relative; }
+.reckoning-timeline article + article { border-left: 1px solid var(--line); }
+.reckoning-timeline article::before { content: ""; position: absolute; top: -1px; left: 30px; width: 70px; height: 3px; background: var(--olive-bright); }
+.reckoning-timeline span { display: block; margin-bottom: 26px; color: var(--olive-bright); font: 700 .72rem var(--display); letter-spacing: .16em; text-transform: uppercase; }
+.reckoning-timeline strong { display: block; margin-bottom: 12px; color: var(--bone); font: 800 1.8rem/.9 var(--display); text-transform: uppercase; }
+.reckoning-timeline p { margin: 0; color: #85887c; font-size: .86rem; line-height: 1.6; }
 .about-closing { min-height: 80svh; display: grid; place-content: center; text-align: center; padding: 100px 24px; background: linear-gradient(rgba(5,6,5,.72), rgba(5,6,5,.82)), url("assets/banner.png") center / cover; }
 .about-closing h2 { margin: 0 0 30px; font: 800 clamp(4rem, 9vw, 8rem)/.86 var(--display); text-transform: uppercase; }
 .about-closing h2 span { color: var(--olive-bright); }
@@ -216,6 +227,7 @@ footer { display: flex; justify-content: space-between; gap: 40px; padding: 60px
   .origin-title { position: static; }
   .about-confession { grid-template-columns: 1fr; gap: 20px; }
   .confession-number { line-height: .8; }
+  .reckoning .confession-number { position: static; }
 }
 
 @media (max-width: 620px) {
@@ -237,6 +249,9 @@ footer { display: flex; justify-content: space-between; gap: 40px; padding: 60px
   .lyrics-scroll { padding: 30px 24px 60px; }
   .origin-title h2 { font-size: clamp(3.2rem, 16vw, 4.5rem); }
   .origin-title h2 .origin-brand { font-size: clamp(2.6rem, 13vw, 3.6rem); letter-spacing: -.03em; }
+  .reckoning-timeline { grid-template-columns: 1fr; margin-top: 38px; }
+  .reckoning-timeline article { min-height: 0; }
+  .reckoning-timeline article + article { border-left: 0; border-top: 1px solid var(--line); }
   .story-art { min-height: 500px; }
   .pillars { grid-template-columns: 1fr; }
   .pillars article, .pillars article:nth-child(2) { min-height: 300px; border-right: 0; border-bottom: 1px solid var(--line); }
