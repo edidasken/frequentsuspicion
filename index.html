@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090b08">
+  <meta name="description" content="The official lyric collection for Carry It Forward: From Wreckage to Redemption by FrequentSuspicion.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://edidasken.github.io/frequentsuspicion/">
+  <meta property="og:title" content="FrequentSuspicion — Carry It Forward">
+  <meta property="og:description" content="The interactive lyric experience: sixteen songs, four movements, one testimony from wreckage to redemption.">
+  <meta property="og:image" content="https://edidasken.github.io/frequentsuspicion/assets/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FrequentSuspicion — Carry It Forward">
+  <meta name="twitter:description" content="Watch, listen, and read the complete interactive album.">
+  <meta name="twitter:image" content="https://edidasken.github.io/frequentsuspicion/assets/og.png">
+  <title>Carry It Forward — FrequentSuspicion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Libre+Franklin:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="hero" id="top">
+    <div class="hero-art" aria-hidden="true"></div>
+    <nav class="topbar" aria-label="Primary navigation">
+      <a class="wordmark" href="#top"><span>F</span>requent<span>S</span>uspicion</a>
+      <div class="nav-links">
+        <a href="#album">Interactive Album</a>
+        <a href="#story">The Story</a>
+        <a href="https://music.youtube.com/playlist?list=PLYnXteIAoUN8" target="_blank" rel="noreferrer">Listen on YouTube Music</a>
+      </div>
+    </nav>
+
+    <div class="hero-copy">
+      <p class="eyebrow">The official lyric collection</p>
+      <h1><span>Carry It</span> Forward</h1>
+      <p class="subtitle">From Wreckage to Redemption</p>
+      <p class="hero-deck">Sixteen songs. One testimony. A passage through confession, surrender, healing, discernment, and renewed purpose.</p>
+      <a class="primary-action" href="#album">Enter the interactive album <span aria-hidden="true">↓</span></a>
+    </div>
+
+    <div class="hero-quote">
+      <span class="quote-line"></span>
+      <p>The wreckage is real.<br>Redemption is possible.<br><strong>Carry it forward.</strong></p>
+    </div>
+  </header>
+
+  <main>
+    <section class="manifesto">
+      <p class="eyebrow">A testimony in four movements</p>
+      <h2>Grace does not erase the truth.<br><em>It gives us the courage to face it.</em></h2>
+      <p>These songs refuse easy answers. They name the fire, kneel in the wreckage, confront the silence, and follow the narrow path toward the light.</p>
+    </section>
+
+    <section class="interactive-album" id="album">
+      <div class="section-intro">
+        <div>
+          <p class="eyebrow">Watch · Listen · Read</p>
+          <h2>Interactive Album</h2>
+        </div>
+        <p>Select a song to enter its chapter. The video and published lyrics stay together, so the music can be heard in the context in which it was written.</p>
+      </div>
+
+      <div class="album-console">
+        <aside class="console-tracks" aria-label="Album track list">
+          <div class="rail-heading">
+            <p>Track index</p>
+            <span>16 songs · 4 acts</span>
+          </div>
+          <nav id="track-nav"></nav>
+        </aside>
+
+        <section class="console-stage" aria-live="polite">
+          <div class="video-shell">
+            <iframe id="video-player" title="FrequentSuspicion video player" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <div class="now-playing">
+            <div>
+              <p id="active-kicker">Track 01 · Act I</p>
+              <h3 id="active-title">My Dumpster Fire</h3>
+            </div>
+            <div class="transport" aria-label="Album navigation">
+              <button id="previous-track" type="button" aria-label="Previous song">←</button>
+              <span id="track-position">01 / 16</span>
+              <button id="next-track" type="button" aria-label="Next song">→</button>
+            </div>
+          </div>
+          <p class="active-act-note" id="active-act-note"></p>
+        </section>
+
+        <section class="console-lyrics" aria-label="Lyrics">
+          <div class="lyrics-toolbar">
+            <div>
+              <span>Official lyrics</span>
+              <strong id="lyrics-title">My Dumpster Fire</strong>
+            </div>
+            <a id="youtube-link" href="#" target="_blank" rel="noreferrer">Open on YouTube ↗</a>
+          </div>
+          <div class="lyrics-scroll" id="active-lyrics">
+            <div class="loading">Opening the lyrics…</div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="story" id="story">
+      <div class="story-art" aria-hidden="true"></div>
+      <div class="story-copy">
+        <p class="eyebrow">Behind FrequentSuspicion</p>
+        <h2>Faith spoken from inside the wreckage.</h2>
+        <p class="lead">FrequentSuspicion is Christian rock born from repentance, responsibility, spiritual conflict, and the severe mercy of God.</p>
+        <p>I write as a husband, a father of two daughters, and a veteran carrying the aftermath of the battlefield and PTSD—not as someone standing above the people listening, but as a man forced to confront himself.</p>
+        <p>These songs come from broken marriages, damaged trust, spiritual failure, church silence, wounded relationships, and the recognition that trauma may explain part of my struggle, but it cannot excuse the harm I caused. The lyrics refuse to make me the hero. They name pride, secrecy, compromise, coercion, hypocrisy, and the cost of ignoring truth.</p>
+        <p>The purpose is not confession for spectacle. It is to show that repentance requires honesty, biblical love requires courage, and grace is strong enough to enter the truth without pretending the wreckage never happened.</p>
+      </div>
+    </section>
+
+    <section class="pillars" aria-label="The themes of FrequentSuspicion">
+      <article><span>01</span><h3>Radical Honesty</h3><p>No self-protection. No renamed sin. No edited testimony that makes the singer the hero.</p></article>
+      <article><span>02</span><h3>Grace &amp; Truth</h3><p>Mercy does not bury evidence, and forgiveness does not require the wounded to call evil peace.</p></article>
+      <article><span>03</span><h3>Accountability</h3><p>Spiritual authority carries responsibility. Silence and neutrality have consequences.</p></article>
+      <article><span>04</span><h3>Redemptive Legacy</h3><p>The past cannot be rewritten, but its scars can point beyond failure and toward Christ.</p></article>
+    </section>
+
+    <section class="journey" id="journey">
+      <div class="section-intro">
+        <div><p class="eyebrow">The album architecture</p><h2>Four movements.<br>One testimony.</h2></div>
+        <p>The track order is intentional. Each act carries the listener deeper—from ownership of the fire to a life commissioned to carry faith forward.</p>
+      </div>
+      <div class="act-grid" id="act-grid"></div>
+    </section>
+
+    <section class="closing-commission">
+      <div class="closing-copy">
+        <p class="eyebrow">The final word</p>
+        <h2>The wreckage is real.<br><span>Redemption is possible.</span></h2>
+        <p>For veterans carrying invisible battles. For fathers grieving what they failed to protect. For families living with consequences they did not create. For believers wounded by churches, and for anyone standing in the ashes of their choices.</p>
+        <a class="primary-action" href="https://music.youtube.com/playlist?list=PLYnXteIAoUN8" target="_blank" rel="noreferrer">Listen to the complete journey ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <p class="footer-mark">FrequentSuspicion</p>
+      <p>Music, lyrics, and visual concept by FrequentSuspicion.</p>
+    </div>
+    <div class="footer-links">
+      <a href="https://www.youtube.com/@FrequentSuspicion" target="_blank" rel="noreferrer">YouTube</a>
+      <a href="https://music.youtube.com/playlist?list=PLYnXteIAoUN8" target="_blank" rel="noreferrer">YouTube Music</a>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
