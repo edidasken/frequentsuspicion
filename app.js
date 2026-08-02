@@ -97,14 +97,21 @@ let progressMilestones = new Set();
 function trackAlbumEvent(eventName, track = tracks[activeIndex], parameters = {}) {
   const act = acts[track.act];
   window.fsAnalytics?.track(eventName, {
+    content_type: "song",
     song_title: track.title,
     song_number: track.number,
     song_slug: track.slug,
     video_id: track.video,
+    video_title: track.title,
+    video_url: `https://www.youtube.com/watch?v=${track.video}`,
     movement_number: track.act + 1,
     movement_name: `Act ${act.number} · ${act.title}`,
     ...parameters
   });
+}
+
+function listeningEventName(track) {
+  return `listening_${track.slug.replaceAll("-", "_")}`;
 }
 
 function stopProgressTracking() {
@@ -162,6 +169,10 @@ window.onYouTubeIframeAPIReady = () => {
             playingVideoId = track.video;
             progressMilestones = new Set();
             trackAlbumEvent("song_start", track, { selection_method: selectionMethod });
+            trackAlbumEvent(listeningEventName(track), track, {
+              selection_method: selectionMethod,
+              listening_status: "started"
+            });
           }
           startProgressTracking();
         } else if (event.data === window.YT.PlayerState.PAUSED) {

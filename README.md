@@ -13,6 +13,7 @@ In the repository settings, open **Pages**, select **Deploy from a branch**, the
 Google Analytics 4 uses measurement ID `G-CHECHVWGVV` on the home and about pages. Album interactions emit these custom events:
 
 - `song_view`, `song_start`, `song_pause`, `song_progress`, and `song_complete`
+- `listening_<song_slug>` when playback begins, making the exact song visible by event name in Realtime
 - `movement_start`
 - `outbound_link_click`
 
