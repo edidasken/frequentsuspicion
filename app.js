@@ -87,7 +87,7 @@ async function loadTrack(index, autoplay = false) {
   const act = acts[track.act];
   document.querySelectorAll(".track-link").forEach(button => button.classList.toggle("active", Number(button.dataset.index) === activeIndex));
   const activeButton = document.querySelector(`.track-link[data-index="${activeIndex}"]`);
-  activeButton?.scrollIntoView({ block: "nearest", inline: "nearest" });
+  if (autoplay) activeButton?.scrollIntoView({ block: "nearest", inline: "nearest" });
 
   document.querySelector("#active-kicker").textContent = `Track ${String(track.number).padStart(2, "0")} · Act ${act.number} · ${act.title}`;
   document.querySelector("#active-title").textContent = track.title;
