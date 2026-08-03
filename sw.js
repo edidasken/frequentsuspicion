@@ -1,9 +1,9 @@
-const CACHE_NAME = "frequentsuspicion-shell-v10";
+const CACHE_NAME = "frequentsuspicion-shell-v11";
 const APP_SHELL = [
   "./",
   "./index.html",
   "./about.html",
-  "./styles.css?v=20260802-11",
+  "./styles.css?v=20260802-13",
   "./analytics.js?v=1",
   "./app.js?v=20260802-8",
   "./care.js?v=20260802-1",
