@@ -36,7 +36,7 @@
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
-  <link rel="stylesheet" href="styles.css?v=20260807-2">
+  <link rel="stylesheet" href="styles.css?v=20260807-4">
 </head>
 <body>
   <div class="grain" aria-hidden="true"></div>
@@ -46,7 +46,16 @@
     <nav class="topbar" aria-label="Primary navigation">
       <a class="wordmark" href="#top"><span>F</span>requent<span>S</span>uspicion</a>
       <div class="nav-links">
-        <a href="#journey">Albums</a>
+        <details class="nav-albums">
+          <summary>Albums <span aria-hidden="true">⌄</span></summary>
+          <div class="nav-album-menu">
+            <a href="index.html#journey"><span>Overview</span>Complete Journey</a>
+            <a href="album.html#the-war-came-home" data-nav-album="the-war-came-home"><span>Album I</span>The War Came Home</a>
+            <a href="album.html#the-reckoning" data-nav-album="the-reckoning"><span>Album II</span>The Reckoning</a>
+            <a href="album.html#the-restoration" data-nav-album="the-restoration"><span>Album III</span>The Restoration</a>
+            <a href="album.html#carry-it-forward" data-nav-album="carry-it-forward"><span>Album IV</span>Carry It Forward</a>
+          </div>
+        </details>
         <a href="about.html">About</a>
         <button type="button" data-open-prayer>Prayer</button>
         <a class="youtube-music-icon" href="https://www.youtube.com/@FrequentSuspicion" target="_blank" rel="noreferrer" aria-label="Visit FrequentSuspicion on YouTube" title="Visit FrequentSuspicion on YouTube"><span aria-hidden="true"></span></a>
@@ -111,7 +120,7 @@
         <p class="eyebrow">The final word</p>
         <h2>The wreckage is real.<br><span>Redemption is possible.</span></h2>
         <p>For veterans carrying invisible battles. For fathers grieving what they failed to protect. For families living with consequences they did not create. For believers wounded by churches, and for anyone learning that restoration does not mean returning to who they were before.</p>
-        <a class="primary-action" href="#journey">Begin with Album One <span aria-hidden="true">↑</span></a>
+        <a class="primary-action" href="album.html#the-war-came-home">Begin with Album One <span aria-hidden="true">→</span></a>
       </div>
     </section>
   </main>
@@ -227,9 +236,9 @@
   </div>
 
   <script src="analytics.js?v=1" defer></script>
-  <script src="app.js?v=20260807-2" defer></script>
+  <script src="app.js?v=20260807-3" defer></script>
   <script type="module" src="care.js?v=20260802-1"></script>
-  <script src="accessibility.js?v=1" defer></script>
+  <script src="accessibility.js?v=2" defer></script>
   <script src="pwa.js?v=2" defer></script>
 </body>
 </html>

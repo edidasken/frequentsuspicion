@@ -421,8 +421,8 @@ function setAlbumHeader() {
   document.querySelector("#interactive-description").textContent = `“${activeAlbum.question}” Select a song to watch, listen, and read it in the context of the complete album.`;
   document.querySelector("#rail-album-title").textContent = activeAlbum.title;
   document.querySelector("#rail-album-count").textContent = `${activeAlbum.tracks.length} songs`;
-  document.querySelectorAll("[data-album-route]").forEach(link => {
-    const active = link.dataset.albumRoute === activeAlbum.slug;
+  document.querySelectorAll("[data-album-route], [data-nav-album]").forEach(link => {
+    const active = (link.dataset.albumRoute || link.dataset.navAlbum) === activeAlbum.slug;
     link.classList.toggle("active", active);
     if (active) link.setAttribute("aria-current", "page");
     else link.removeAttribute("aria-current");

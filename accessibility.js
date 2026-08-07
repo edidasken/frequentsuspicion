@@ -8,6 +8,7 @@
   const signsTrigger = document.querySelector(".signs-trigger");
   const signsLayer = document.querySelector(".signs-layer");
   const signsDialog = document.querySelector(".signs-dialog");
+  const albumMenus = [...document.querySelectorAll(".nav-albums")];
   let returnFocus = null;
 
   function applyScale(value, persist = true) {
@@ -65,13 +66,20 @@
 
   signsTrigger?.addEventListener("click", openSigns);
   document.querySelectorAll("[data-signs-close]").forEach(button => button.addEventListener("click", closeSigns));
+  document.querySelectorAll("[data-nav-album]").forEach(link => link.addEventListener("click", () => link.closest(".nav-albums")?.removeAttribute("open")));
+  document.querySelectorAll("[data-scroll-target]").forEach(control => control.addEventListener("click", () => {
+    const target = document.querySelector(control.dataset.scrollTarget);
+    target?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }));
 
   document.addEventListener("click", event => {
     if (!event.target.closest(".reader-size-control")) closeSizeMenu();
+    if (!event.target.closest(".nav-albums")) albumMenus.forEach(menu => menu.removeAttribute("open"));
   });
 
   document.addEventListener("keydown", event => {
     if (event.key !== "Escape") return;
+    albumMenus.forEach(menu => menu.removeAttribute("open"));
     if (signsLayer && !signsLayer.hidden) closeSigns();
     else closeSizeMenu();
   });

@@ -29,7 +29,7 @@
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
-  <link rel="stylesheet" href="styles.css?v=20260807-2">
+  <link rel="stylesheet" href="styles.css?v=20260807-4">
 </head>
 <body class="about-page">
   <div class="grain" aria-hidden="true"></div>
@@ -38,7 +38,16 @@
     <nav class="topbar">
       <a class="wordmark" href="index.html"><span>F</span>requent<span>S</span>uspicion</a>
       <div class="nav-links">
-        <a href="index.html#journey">Albums</a>
+        <details class="nav-albums">
+          <summary>Albums <span aria-hidden="true">⌄</span></summary>
+          <div class="nav-album-menu">
+            <a href="index.html#journey"><span>Overview</span>Complete Journey</a>
+            <a href="album.html#the-war-came-home" data-nav-album="the-war-came-home"><span>Album I</span>The War Came Home</a>
+            <a href="album.html#the-reckoning" data-nav-album="the-reckoning"><span>Album II</span>The Reckoning</a>
+            <a href="album.html#the-restoration" data-nav-album="the-restoration"><span>Album III</span>The Restoration</a>
+            <a href="album.html#carry-it-forward" data-nav-album="carry-it-forward"><span>Album IV</span>Carry It Forward</a>
+          </div>
+        </details>
         <a href="about.html" aria-current="page">About Greg</a>
         <a class="youtube-music-icon" href="https://www.youtube.com/@FrequentSuspicion" target="_blank" rel="noreferrer" aria-label="Visit FrequentSuspicion on YouTube" title="Visit FrequentSuspicion on YouTube"><span aria-hidden="true"></span></a>
       </div>
@@ -191,7 +200,7 @@
     </section>
   </div>
   <script src="analytics.js?v=1" defer></script>
-  <script src="accessibility.js?v=1" defer></script>
+  <script src="accessibility.js?v=2" defer></script>
   <script src="pwa.js?v=2" defer></script>
 </body>
 </html>
