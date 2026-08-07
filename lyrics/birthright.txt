@@ -1,8 +1,8 @@
-(Intro)
+[Intro]
 Thought I was chasing life…
 Turns out…I was running from me.
 
-(Verse 1)
+[Verse 1]
 Called the garden a cage.
 Called the wasteland free.
 Thought I knew who I was.
@@ -20,7 +20,7 @@ Called darkness light.
 I walked from my home…
 Certain I was right.
 
-(Build)
+[Build]
 Truth kept calling.
 Pride kept talking.
 Love stood waiting.
@@ -30,7 +30,7 @@ I pushed away.
 Now seventeen years…
 Still haunt today.
 
-(Chorus)
+[Chorus]
 I traded gold… for dust.
 Forever… for lust.
 Home… for the road.
@@ -40,7 +40,7 @@ What I threw away.
 Some choices last a lifetime…
 Some never stop making you pay.
 
-(Verse 2)
+[Verse 2]
 Pictures froze.
 Children grew.
 Every mile…
@@ -58,7 +58,7 @@ Now I understand.
 I wasn’t fighting my wife…
 I was fighting God’s hand.
 
-(Breakdown)
+[Breakdown]
 I wasn’t trapped.
 I wasn’t fooled.
 I knew the truth…
@@ -68,17 +68,14 @@ No one pushed.
 I opened both hands…
 And dropped the gift.
 
-(Repeat Chorus)
-
-(Bridge)
+[Bridge]
 If your heart starts wandering…
 Don’t trust what feels alive.
 The serpent still whispers…
-“You deserve more.”
 He never tells you…
 What it’ll cost.
 
-(Final Chorus)
+[Final Chorus]
 I traded gold… for dust.
 Forever… for lust.
 A father’s place…
@@ -88,11 +85,9 @@ If one family stays…
 Then let my wreckage testify…
 Don’t trade your birthright away.
 
-(Outro)
+[Outro]
 I thought I was chasing life…
 Turns out…
 I was running…
 From the life…
 God already gave me.
-
-#Birthright #FrequentSuspicion #ChristianMusic #WorshipMusic #CCM #ChristianLyrics #ProdigalSon #FaithAndFamily #ChristianRock #GraceAndForgiveness #Redemption #Fatherhood #ChristianTestimony

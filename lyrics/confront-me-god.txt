@@ -1,4 +1,4 @@
-(Verse 1)
+[Verse 1]
 Confront me, God. Leave nothing hidden.
 Search every motive. Expose what’s forbidden.
 Shine through the darkness I’ve learned to defend.
@@ -12,7 +12,7 @@ I don’t want pleasure if pleasure remains.
 Lead me through fire if fire makes me whole.
 Nothing is worth what it costs for my soul.
 
-(Build)
+[Build]
 Search me.
 Know me.
 Test every word.
@@ -23,7 +23,7 @@ Leading to sin.
 If I must lose…
 Then let holiness win.
 
-(Chorus)
+[Chorus]
 Confront me, God!
 Don’t leave me the same!
 Tear down every kingdom
@@ -42,7 +42,7 @@ Teach me to stand.
 Write Your commandments…
 Deep in my hands.
 
-(Verse 2)
+[Verse 2]
 I know temptation don’t knock like a storm.
 It whispers until compromise feels warm.
 One little secret becomes who I am.
@@ -56,13 +56,13 @@ Let them see Jesus, not my pride.
 Take every scar and every shame.
 Turn every loss toward Your name.
 
-(Breakdown)
+[Breakdown]
 Break me…Before sin breaks me.
 Humble me…Before pride takes me.
 Correct me…Before judgment finds me.
 Never let my own heart…Blind me.
 
-(Bridge)
+[Bridge]
 Search me…O God.
 Know my anxious heart.
 Test me…O God.
@@ -72,7 +72,7 @@ Don’t leave it there.
 Lead me in the everlasting way.
 Because I cannot lead myself.
 
-(Final Chorus)
+[Final Chorus]
 Confront me, God!
 Speak and I’ll obey!
 Even when Your mercy
@@ -88,5 +88,3 @@ But Christ in me.
 Your glory.
 Your Kingdom.
 Your Name.
-
-#ConfrontMeGod #FrequentSuspicion #ChristianMusic #ChristianRock #WorshipMusic #CCM #SearchMeOGod #Psalm139 #RefiningFire #ChristianLyrics #GenerationalFaith #Holiness #RadicalSurrender

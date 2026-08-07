@@ -19,6 +19,7 @@ body.dialog-open { overflow: hidden; }
 a { color: inherit; }
 img, picture, video, iframe { max-width: 100%; }
 img, video { height: auto; }
+[hidden] { display: none !important; }
 .grain { position: fixed; inset: 0; opacity: .14; pointer-events: none; z-index: 20; mix-blend-mode: soft-light; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.78' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E"); }
 
 .hero { min-height: 100svh; position: relative; overflow: hidden; display: grid; align-items: end; isolation: isolate; background: #050605; }
@@ -58,6 +59,28 @@ main { background: radial-gradient(circle at 80% 10%, rgba(105,111,55,.12), tran
 .manifesto h2 em { color: var(--olive-bright); font-style: normal; }
 .manifesto > p:last-child { max-width: 720px; margin: auto; color: var(--bone-dim); }
 
+.album-journey { padding: 130px 0 170px; border-top: 1px solid var(--line); background: radial-gradient(circle at 84% 9%, rgba(139,145,69,.11), transparent 27%), #070806; }
+.journey-intro { padding-bottom: 70px; }
+.journey-line { width: min(1180px, calc(100% - 80px)); height: 1px; margin: 0 auto 86px; display: flex; justify-content: space-between; background: linear-gradient(90deg, #506070, #b6a66a 38%, #78906b 70%, #9ca44f); }
+.journey-line span { width: 13px; height: 13px; margin-top: -6px; border: 2px solid var(--ink); border-radius: 50%; background: var(--bone); box-shadow: 0 0 0 1px var(--line); }
+.album-chapters { width: min(1380px, calc(100% - 48px)); margin: auto; display: grid; gap: 2px; background: var(--line); border: 1px solid var(--line); }
+.album-chapter { min-height: 720px; display: grid; grid-template-columns: minmax(320px, .9fr) minmax(0, 1.1fr); background: #090b08; }
+.album-chapter:nth-child(even) .album-chapter-art { order: 2; }
+.album-chapter-art { min-height: 100%; position: relative; overflow: hidden; background: #050605; }
+.album-chapter-art::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent 58%, rgba(9,11,8,.36)), linear-gradient(0deg, rgba(5,6,5,.34), transparent 44%); }
+.album-chapter:nth-child(even) .album-chapter-art::after { background: linear-gradient(-90deg, transparent 58%, rgba(9,11,8,.36)), linear-gradient(0deg, rgba(5,6,5,.34), transparent 44%); }
+.album-chapter-art img { width: 100%; height: 100%; display: block; object-fit: cover; filter: saturate(.78) contrast(1.04); transition: transform .6s ease, filter .6s ease; }
+.album-chapter:hover .album-chapter-art img, .album-chapter.active .album-chapter-art img { transform: scale(1.02); filter: saturate(.94) contrast(1.04); }
+.album-chapter-copy { display: flex; flex-direction: column; justify-content: center; padding: clamp(60px, 7vw, 105px); }
+.album-chapter-copy h3 { margin: 0; font: 800 clamp(3.8rem, 7vw, 7rem)/.82 var(--display); text-transform: uppercase; letter-spacing: -.035em; }
+.album-subtitle { margin: 17px 0 28px !important; color: var(--olive-bright) !important; font: 700 clamp(1rem, 2vw, 1.35rem)/1.2 var(--display); text-transform: uppercase; letter-spacing: .15em; }
+.album-chapter-copy blockquote { margin: 0 0 28px; padding: 0 0 0 23px; border-left: 2px solid var(--olive); color: var(--bone); font: 600 clamp(1.25rem, 2.2vw, 1.65rem)/1.5 var(--body); }
+.album-chapter-copy > p:not(.eyebrow):not(.album-subtitle) { max-width: 720px; margin: 0 0 18px; color: #fff; font-size: calc(1rem * var(--reader-scale)); }
+.chapter-action { align-self: flex-start; margin-top: 20px; padding: 12px 0; border: 0; border-bottom: 2px solid var(--olive); background: transparent; color: var(--bone); cursor: pointer; font: 700 .83rem var(--display); text-transform: uppercase; letter-spacing: .14em; }
+.chapter-action span { margin-left: 16px; color: var(--olive-bright); }
+.chapter-action:hover { color: var(--olive-bright); }
+.album-chapter.active { outline: 1px solid rgba(178,183,89,.6); outline-offset: -1px; }
+
 .section-intro { max-width: 1320px; margin: 0 auto; padding: 0 clamp(24px, 5vw, 76px) 48px; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(280px, .8fr); gap: 60px; align-items: end; }
 .section-intro h2 { margin: 0; font: 800 clamp(3.8rem, 8vw, 7.2rem)/.82 var(--display); text-transform: uppercase; letter-spacing: -.03em; }
 .section-intro > p { margin: 0; color: var(--bone-dim); max-width: 560px; }
@@ -67,6 +90,12 @@ main { background: radial-gradient(circle at 80% 10%, rgba(105,111,55,.12), tran
 .console-stage { min-width: 0; min-height: 0; display: flex; flex-direction: column; border-right: 1px solid var(--line); }
 .video-shell { position: relative; aspect-ratio: 16/9; background: #000; border-bottom: 1px solid var(--line); }
 .video-shell iframe { width: 100%; height: 100%; border: 0; display: block; }
+.video-placeholder { position: absolute; inset: 0; display: grid; place-items: end start; padding: clamp(28px, 5vw, 58px); background-position: center; background-size: cover; isolation: isolate; }
+.video-placeholder::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(4,5,4,.86), rgba(4,5,4,.26)), linear-gradient(0deg, rgba(4,5,4,.9), transparent 72%); }
+.video-placeholder > div { max-width: 480px; }
+.video-placeholder span { color: var(--olive-bright); font: 700 .78rem var(--display); text-transform: uppercase; letter-spacing: .2em; }
+.video-placeholder h3 { margin: 9px 0 10px; font: 800 clamp(2.2rem, 5vw, 4.2rem)/.86 var(--display); text-transform: uppercase; }
+.video-placeholder p { margin: 0; color: #fff; font-size: .95rem; }
 .now-playing { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 32px 36px 20px; }
 .now-playing p { margin: 0 0 7px; color: var(--olive-bright); font: 700 .78rem var(--display); letter-spacing: .18em; text-transform: uppercase; }
 .now-playing h3 { margin: 0; font: 800 clamp(2rem, 4vw, 3.8rem)/.9 var(--display); text-transform: uppercase; }
@@ -84,6 +113,16 @@ main { background: radial-gradient(circle at 80% 10%, rgba(105,111,55,.12), tran
 .lyrics-scroll:focus-visible { outline: 2px solid var(--olive-bright); outline-offset: -3px; }
 .lyrics-scroll .lyric-section { margin-bottom: 30px; }
 .lyrics-scroll .lyric-section p { font-size: calc(1.06rem * var(--reader-scale)); line-height: 1.85; }
+.lyrics-unavailable { min-height: 100%; display: flex; flex-direction: column; justify-content: center; }
+.lyrics-unavailable > span { color: var(--olive-bright); font: 700 .75rem var(--display); text-transform: uppercase; letter-spacing: .2em; }
+.lyrics-unavailable h4 { margin: 13px 0 20px; font: 800 clamp(2.4rem, 5vw, 4rem)/.88 var(--display); text-transform: uppercase; }
+.lyrics-unavailable p { color: #fff; }
+.lyrics-unavailable strong { margin-top: 18px; color: var(--bone); font: 700 .79rem var(--display); text-transform: uppercase; letter-spacing: .12em; }
+
+body[data-album="the-war-came-home"] .interactive-album { background: radial-gradient(circle at 12% 0, rgba(74,93,110,.18), transparent 30%), linear-gradient(180deg, #080b0d, #070806); }
+body[data-album="the-reckoning"] .interactive-album { background: radial-gradient(circle at 88% 0, rgba(181,143,75,.16), transparent 28%), linear-gradient(180deg, #0b0907, #070806); }
+body[data-album="the-restoration"] .interactive-album { background: radial-gradient(circle at 50% 0, rgba(91,122,73,.18), transparent 31%), linear-gradient(180deg, #080b08, #070806); }
+body[data-album="carry-it-forward"] .interactive-album { background: radial-gradient(circle at 15% 0, rgba(139,145,69,.17), transparent 29%), linear-gradient(180deg, #090b08, #070806); }
 
 .track-rail { position: sticky; top: 0; height: 100svh; overflow: auto; border-right: 1px solid var(--line); background: rgba(8,10,7,.95); scrollbar-width: thin; }
 .track-rail { position: sticky; top: 0; height: 100svh; overflow: auto; border-right: 1px solid var(--line); background: rgba(8,10,7,.95); scrollbar-width: thin; }
@@ -384,6 +423,11 @@ footer { display: flex; justify-content: space-between; gap: 40px; padding: 60px
   .hero-copy { padding-left: 24px; padding-right: 24px; }
   .hero-quote { display: none; }
   .section-intro { grid-template-columns: 1fr; gap: 20px; }
+  .album-chapter { min-height: 0; grid-template-columns: 1fr; }
+  .album-chapter:nth-child(even) .album-chapter-art { order: 0; }
+  .album-chapter-art { min-height: 0; aspect-ratio: 16 / 9; }
+  .album-chapter-art::after, .album-chapter:nth-child(even) .album-chapter-art::after { background: linear-gradient(0deg, rgba(9,11,8,.7), transparent 60%); }
+  .album-chapter-copy { padding: 62px clamp(28px, 8vw, 72px) 78px; }
   .album-console { height: auto; min-height: 0; grid-template-columns: minmax(0, 1fr); width: min(100% - 28px, 720px); }
   .console-tracks { max-height: 245px; border-right: 0; border-bottom: 1px solid var(--line); }
   .console-stage { grid-column: 1; min-height: 0; border-right: 0; border-bottom: 1px solid var(--line); }
@@ -429,12 +473,19 @@ footer { display: flex; justify-content: space-between; gap: 40px; padding: 60px
   .nav-links .youtube-music-icon { width: 38px; height: 38px; min-height: 38px; flex-basis: 38px; display: grid; }
   .youtube-music-icon span { width: 18px; height: 18px; }
   .hero h1 { font-size: clamp(4.5rem, 24vw, 7rem); }
+  .hero h1 span { font-size: .48em; }
   .subtitle { letter-spacing: .08em; }
   .song { padding-left: 24px; padding-right: 24px; }
   .song h2 { font-size: clamp(3.2rem, 17vw, 5.3rem); }
   .song::before { right: 12px; }
   .lyrics { font-size: 1.13rem; }
   .interactive-album { padding: 78px 0; }
+  .album-journey { padding: 82px 0 100px; }
+  .journey-line { width: calc(100% - 46px); margin-bottom: 50px; }
+  .album-chapters { width: calc(100% - 20px); }
+  .album-chapter-copy { padding: 43px 24px 58px; }
+  .album-chapter-copy h3 { font-size: clamp(3.4rem, 18vw, 5rem); }
+  .album-chapter-copy blockquote { font-size: 1.12rem; }
   .section-intro { padding-left: 20px; padding-right: 20px; padding-bottom: 36px; }
   .section-intro h2 { font-size: clamp(3.15rem, 17vw, 4.3rem); }
   .album-console { width: calc(100% - 20px); }

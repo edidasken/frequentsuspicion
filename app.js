@@ -1,67 +1,151 @@
-const acts = [
-  { number: "I", title: "The Wreckage", note: "Confession without disguise. The fire is named, the choices owned, and the heart brought into the light.", image: "assets/album-cover.png" },
-  { number: "II", title: "The Rebuilding", note: "Surrender becomes formation. God teaches the wounded heart to live, love, remain, and remember its birthright.", image: "assets/album-cover.png" },
-  { number: "III", title: "The Reckoning", note: "Discernment sharpens. Masks fall, silence is confronted, and mercy refuses to abandon justice.", image: "assets/album-cover.png" },
-  { number: "IV", title: "The Commission", note: "The inward war becomes a warning, a witness, and a legacy carried beyond the ruins.", image: "assets/album-cover.png" }
+const album = ({ slug, number, title, subtitle, movement, question, artwork, story, tracks, sections = [], playlist = "" }) => ({
+  slug, number, title, subtitle, movement, question, artwork, story, tracks, sections, playlist
+});
+
+const song = (title, slug, summary, { video = "", section = 0, lyrics = false } = {}) => ({
+  title, slug, summary, video, section, lyrics
+});
+
+const albums = [
+  album({
+    slug: "the-war-came-home",
+    number: "I",
+    title: "The War Came Home",
+    subtitle: "Recognizing the Destruction",
+    movement: "The Wound / The Soldier Returns",
+    question: "Why is the war still here when the war is over?",
+    artwork: "assets/artwork/the-war-came-home-youtube-playlist-master.png",
+    story: [
+      "The War Came Home was written to name what happened when the battlefield did not remain overseas. The body returned, but vigilance, memory, fear, sleeplessness, and the instinct to search for danger came home too. These songs move through quiet rooms, fractured perception, interrupted celebrations, and the exhausting distance between knowing you are safe and actually feeling safe. They tell the truth about PTSD without allowing trauma to become the complete definition of the man carrying it.",
+      "The purpose of this album is recognition. A wound cannot be healed while it remains unnamed, and suffering cannot be understood while it is treated only as weakness or failure. The album does not use trauma to excuse harm; it gives language to the battle so responsibility and compassion can exist together. In the darkest valley, the Shepherd is still present. Beneath the startle response, there is still a man—and the wound is not the end of his identity."
+    ],
+    tracks: [
+      song("The War Came Home", "the-war-came-home", "The realization that the battlefield followed him home. Trauma is no longer overseas; it lives in quiet rooms, relationships, and memories.", { video: "RAQVldP7EG0" }),
+      song("When the Night Goes Quiet", "when-the-night-goes-quiet", "The loneliness of the watchman. When the world sleeps, the mind stays awake."),
+      song("Shattered Lens", "shattered-lens", "Trauma changes perception. Survival skills can become barriers to peace."),
+      song("Wounded, But Still Going", "wounded-but-still-going", "Being wounded does not mean being defeated.", { video: "Rwn6RK86z9U" }),
+      song("September in July", "september-in-july", "Celebration and trauma collide when a beautiful moment becomes a doorway into the past."),
+      song("The Darkest Valley", "the-darkest-valley", "Suffering is faced while discovering that the Shepherd is present in the valley."),
+      song("Sleep Don’t Come Easy", "sleep-dont-come-easy", "The body continues fighting after the battle—the distance between knowing you are safe and feeling safe."),
+      song("When I Close My Eyes", "when-i-close-my-eyes", "The struggle of rest, memory, and what appears when everything becomes quiet.", { video: "HAEO8xOXI90" }),
+      song("The Man Behind the Startle", "the-man-behind-the-startle", "The reaction is not the identity. There is still a man beyond the trauma response.", { video: "-C6pngc4otA" })
+    ]
+  }),
+  album({
+    slug: "the-reckoning",
+    number: "II",
+    title: "The Reckoning",
+    subtitle: "The Story and The Truth",
+    movement: "The Story They Told / The Truth Revealed",
+    question: "Who gets to define who I am?",
+    artwork: "assets/artwork/the-reckoning-youtube-master.png",
+    story: [
+      "The Reckoning was written from the struggle over who gets to define a person’s identity. It confronts the stories people construct, the whispers that travel before truth is heard, the difference between public appearance and private reality, and the judgment of those who speak without understanding the full cost. It follows the moment when accusations stop sounding like truth and become what they always were: echoes produced by voices that never possessed final authority.",
+      "This is not an album about revenge. It is about discernment, boundaries, and the exposure of borrowed authority. No person, institution, relationship, or accusation has the right to occupy God’s throne. The purpose found in this suffering is the freedom to stop living inside another person’s account of who you are. Truth does not require retaliation. Sometimes the reckoning is complete when the false throne is left empty and the old battlefield no longer receives another day of your life."
+    ],
+    tracks: [
+      song("Broken Me", "broken-me", "They told me who I was. The battle begins against the identity others assigned."),
+      song("The Watchtower", "the-watchtower", "Discernment, isolation, and seeing what others refused to see."),
+      song("The Life She Wanted", "the-life-she-wanted", "The contrast between the public image and the hidden cost of a rewritten story."),
+      song("Whispers in the Ear", "whispers-in-the-ear", "How narratives travel before truth gets heard."),
+      song("Stop Casting Stones", "stop-casting-stones", "The wounded confront those who judged without understanding."),
+      song("Your Words Are Echoes", "your-words-are-echoes", "The moment accusations stop controlling identity."),
+      song("Borrowed Throne", "borrowed-throne", "False authority is exposed. No one gets to take God’s seat."),
+      song("Your Sunday Best", "your-sunday-best", "The mask—and the distance between appearance and reality."),
+      song("It’s Over", "its-over", "Release: leaving the old battlefield and refusing to live there anymore.")
+    ]
+  }),
+  album({
+    slug: "the-restoration",
+    number: "III",
+    title: "The Restoration",
+    subtitle: "Death and Rebirth",
+    movement: "The Healing / Becoming Whole",
+    question: "Who am I becoming now?",
+    artwork: "assets/artwork/death-day-youtube-master.png",
+    story: [
+      "The Restoration was written about what happens after survival and confrontation—when the question is no longer only what happened, but who you are becoming now. These songs follow the ending of destructive cycles, the thawing of places that became numb, and the recovery of love as truth and grace rather than disappearance. They return to the well, to childlike dependence on the Father, and to the identity God intended before fear, shame, trauma, and other people’s expectations began competing for authorship.",
+      "Restoration does not mean recovering the old life exactly as it was. Some former identities, defenses, dreams, and ways of surviving must be surrendered. That is the death and rebirth at the center of the album. Nothing placed on God’s altar is wasted—not grief, wreckage, memory, or the years spent wandering. The purpose of healing is not merely to feel better. It is to become capable of deeper love, honest surrender, mercy, and a life received from God rather than constructed from pain."
+    ],
+    tracks: [
+      song("The Cycle Ends Here", "the-cycle-ends-here", "The decision that the inherited pattern stops with me."),
+      song("The Thaw", "the-thaw", "The frozen places begin to feel and come alive again."),
+      song("Deeper Love", "deeper-love", "Love is no longer disappearance; it becomes truth and grace."),
+      song("Back to Me", "back-to-me", "Recovering who I was meant to be."),
+      song("Still at the Well", "still-at-the-well", "Returning to the source—the place where life comes from."),
+      song("Bring Back the Child in Me", "bring-back-the-child-in-me", "Returning to trust and dependence on the Father."),
+      song("Don’t Give Me Away Again", "dont-give-me-away-again", "Surrendering a wandering heart and asking not to be left to myself."),
+      song("No Waste at the Altar", "no-waste-at-the-altar", "Recognizing that God redeemed even the wreckage."),
+      song("I Bow My Knees", "i-bow-my-knees", "Submitting everything back to Him."),
+      song("You Still Call My Name", "you-still-call-my-name", "Receiving identity from God instead of people."),
+      song("By His Grace", "by-his-grace", "Living from the identity God has given me."),
+      song("Death Day", "death-day", "The former versions of me are laid down so I can receive the life God is giving me now.", { video: "sb0rdhJndpg", lyrics: true })
+    ]
+  }),
+  album({
+    slug: "carry-it-forward",
+    number: "IV",
+    title: "Carry It Forward",
+    subtitle: "From Wreckage to Redemption",
+    movement: "Confession / Formation / Discernment / Commission",
+    question: "How can God carry redemption forward through everything that was broken?",
+    artwork: "assets/album-cover.png",
+    playlist: "https://music.youtube.com/playlist?list=PLYnXteIAoUN8",
+    story: [
+      "Carry It Forward was written as the culmination of the journey. It begins with confession without disguise, moves through surrender and formation, sharpens into discernment, and ends in commission. These songs own sin without excuses, confront pride and counterfeit love, grieve damaged relationships, challenge spiritual silence, and ask God to rebuild what remains. The narrator is neither edited into the hero nor reduced permanently to his worst choices.",
+      "The purpose of this album is to turn testimony into responsibility. The past cannot be rewritten, but it can become a warning, a witness, and a different inheritance. Suffering finds purpose when it produces honesty instead of concealment, compassion instead of cruelty, courage instead of silence, and faithfulness instead of another repeated cycle. Carrying it forward does not mean carrying the wreckage forever. It means allowing God to carry redemption through it so that failure does not receive the final word."
+    ],
+    sections: [
+      { number: "I", title: "The Wreckage", note: "Confession without disguise. The fire is named, the choices are owned, and the heart is brought into the light." },
+      { number: "II", title: "The Rebuilding", note: "Surrender becomes formation. God teaches the wounded heart to live, love, remain, and remember its birthright." },
+      { number: "III", title: "The Reckoning", note: "Discernment sharpens. Masks fall, silence is confronted, and mercy refuses to abandon justice." },
+      { number: "IV", title: "The Commission", note: "The inward war becomes a warning, a witness, and a legacy carried beyond the ruins." }
+    ],
+    tracks: [
+      song("My Dumpster Fire", "my-dumpster-fire", "Owning the ruin without excuses and discovering that grace can still reach the ashes.", { video: "wpFhJ3jKb0U", section: 0, lyrics: true }),
+      song("Every Day Was Sin", "every-day-was-sin", "Recognizing that the destruction was a repeated choice made against conviction.", { video: "_2Wk_vCBvKk", section: 0, lyrics: true }),
+      song("Confront Me, God", "confront-me-god", "Asking God to expose every hidden motive, idol, lie, and counterfeit refuge.", { video: "31Sl5O1zVMA", section: 0, lyrics: true }),
+      song("Break Me", "break-me", "Surrendering pride, self-rule, and every internal kingdom that competes with God.", { video: "V50cgUUUjbQ", section: 0, lyrics: true }),
+      song("A Prayer to The God of My Life", "a-prayer-to-the-god-of-my-life", "Releasing vengeance without denying damage; praying for mercy, truth, accountability, justice, and repentance.", { video: "4-eC1qJTju4", section: 0, lyrics: true }),
+      song("Teach Me to Live", "teach-me-to-live", "Moving beyond survival, numbness, and isolation and asking God to teach the heart how to become whole.", { video: "lomGMdugZx8", section: 1, lyrics: true }),
+      song("Mend the Broken Portrait", "mend-the-broken-portrait", "Asking God to restore the man, father, and identity beneath the fractured family picture.", { video: "zjPosOlvkd8", section: 1, lyrics: true }),
+      song("Biblical Love", "biblical-love", "Rejecting selfish desire disguised as love and learning the patient, sacrificial love revealed by Christ.", { video: "KFDz64r4C0c", section: 1, lyrics: true }),
+      song("Covenant", "covenant", "Understanding covenant as holy faithfulness rather than something governed by changing feelings.", { video: "0ugK3tQfaQ0", section: 1, lyrics: true }),
+      song("Birthright", "birthright", "Recognizing the identity and inheritance traded for rebellion and returning to what God originally gave.", { video: "GjXvRR1Mo3A", section: 1, lyrics: true }),
+      song("The Many Wolves in Masks", "the-many-wolves-in-masks", "Recognizing false spiritual authority by its fruit rather than its polished language or appearance.", { video: "dWfHapzIpFs", section: 2, lyrics: true }),
+      song("The Little Lukewarm Church", "the-little-lukewarm-church", "Confronting church culture that praises truth but retreats when truth requires courage and action.", { video: "6MhyeDC0jsQ", section: 2, lyrics: true }),
+      song("Shepherds of Silence", "shepherds-of-silence", "Holding leaders accountable when passivity and institutional comfort leave wounded people unprotected.", { video: "9d4PEPhWK5M", section: 2, lyrics: true }),
+      song("The Battle for Your Soul", "the-battle-for-your-soul", "Warning that compromise begins with belief and worship, and calling others to guard their hearts.", { video: "-jNWRVneE8c", section: 3, lyrics: true }),
+      song("A Million Times Over", "a-million-times-over", "Owning the choices that destroyed what was given and allowing the testimony to warn others.", { video: "uS_KB19t7II", section: 3, lyrics: true }),
+      song("Carry It Forward", "carry-it-forward", "Asking God to carry faithfulness—not failure—through the narrator, his family, and future generations.", { video: "B_CWZr-zlgI", section: 3, lyrics: true })
+    ]
+  })
 ];
 
-const tracks = [
-  ["My Dumpster Fire", "my-dumpster-fire", "wpFhJ3jKb0U", 0],
-  ["Every Day Was Sin", "every-day-was-sin", "_2Wk_vCBvKk", 0],
-  ["Confront Me, God", "confront-me-god", "31Sl5O1zVMA", 0],
-  ["Break Me", "break-me", "V50cgUUUjbQ", 0],
-  ["A Prayer to The God of My Life", "a-prayer-to-the-god-of-my-life", "4-eC1qJTju4", 0],
-  ["Teach Me to Live", "teach-me-to-live", "lomGMdugZx8", 1],
-  ["Mend the Broken Portrait", "mend-the-broken-portrait", "zjPosOlvkd8", 1],
-  ["Biblical Love", "biblical-love", "KFDz64r4C0c", 1],
-  ["Covenant", "covenant", "0ugK3tQfaQ0", 1],
-  ["Birthright", "birthright", "GjXvRR1Mo3A", 1],
-  ["The Many Wolves in Masks", "the-many-wolves-in-masks", "dWfHapzIpFs", 2],
-  ["The Little Lukewarm Church", "the-little-lukewarm-church", "6MhyeDC0jsQ", 2],
-  ["Shepherds of Silence", "shepherds-of-silence", "9d4PEPhWK5M", 2],
-  ["The Battle for Your Soul", "the-battle-for-your-soul", "-jNWRVneE8c", 3],
-  ["A Million Times Over", "a-million-times-over", "uS_KB19t7II", 3],
-  ["Carry It Forward", "carry-it-forward", "B_CWZr-zlgI", 3]
-].map(([title, slug, video, act], index) => ({ title, slug, video, act, number: index + 1 }));
+const escapeHtml = value => String(value).replace(/[&<>"']/g, char => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;" })[char]);
 
-const escapeHtml = value => value.replace(/[&<>"']/g, char => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;" })[char]);
-
-function cleanSource(raw, title) {
-  let lines = raw.replace(/\r/g, "").split("\n");
-  const hashIndex = lines.findIndex(line => line.trim().startsWith("#"));
-  if (hashIndex >= 0) lines = lines.slice(0, hashIndex);
-  lines = lines.filter(line => !/^(?:@FrequentSuspicion\b|.*\bby\s+@FrequentSuspicion\b|A Song\/Video about\b|Music, lyrics, and visual concept\b)/i.test(line.trim()));
-
-  // Publishing/performance cues are not lyrics and should never enter the reader.
-  lines = lines.filter(line => !/^\s*(?:\*{1,2})?(?:ending\s+(?:with|in)\b|guitar\s+solo\b|fade\s+(?:out|to)\b|instrumental\s+(?:break|solo)\b|music\s+(?:continues|fades)\b).*?(?:\*{1,2})?\s*$/i.test(line));
-
-  const firstSection = lines.findIndex(line => /^\s*[[(](intro|opening|verse|chorus|pre-chorus|build|breakdown|bridge|interlude|instrumental|outro|final|closing|repeat)/i.test(line));
-  if (firstSection > 0) lines = lines.slice(firstSection);
-
-  while (lines.length && !lines[0].trim()) lines.shift();
-  while (lines.length && !lines.at(-1).trim()) lines.pop();
-  return lines.join("\n");
+function cleanSource(raw) {
+  const lines = raw.replace(/\r/g, "").split("\n");
+  const firstSection = lines.findIndex(line => /^\s*\[.+?\]\s*$/.test(line));
+  const lyricLines = firstSection >= 0 ? lines.slice(firstSection) : lines;
+  while (lyricLines.length && !lyricLines[0].trim()) lyricLines.shift();
+  while (lyricLines.length && !lyricLines.at(-1).trim()) lyricLines.pop();
+  return lyricLines.join("\n");
 }
 
 function renderLyrics(raw) {
-  const lines = raw.split("\n");
   const sections = [];
   let current = { label: "", body: [] };
-
   const flush = () => {
     if (current.label || current.body.some(Boolean)) sections.push(current);
     current = { label: "", body: [] };
   };
 
-  lines.forEach(line => {
-    const trimmed = line.trim();
-    const section = trimmed.match(/^[[(](.+?)[\])]/);
+  raw.split("\n").forEach(line => {
+    const section = line.trim().match(/^\[(.+?)\]$/);
     if (section) {
       flush();
-      current.label = section[1]
-        .replace(/\*+/g, "")
-        .replace(/,?\s*(?:ending\s+(?:with|in)|with)\s+(?:a\s+)?(?:guitar\s+)?solo.*$/i, "")
-        .trim();
+      current.label = section[1].trim();
     } else {
       current.body.push(line.replace(/\s+$/, ""));
     }
@@ -69,23 +153,17 @@ function renderLyrics(raw) {
   flush();
 
   return sections.map(section => {
-    const type = section.label.toLowerCase();
-    const cls = type.includes("chorus") || type.includes("anthem") ? "is-chorus" : type.includes("breakdown") ? "is-breakdown" : "";
     const body = section.body.join("\n").trim();
     if (!body) return "";
+    const type = section.label.toLowerCase();
+    const cls = type.includes("chorus") || type.includes("anthem") ? "is-chorus" : type.includes("breakdown") ? "is-breakdown" : "";
     return `<div class="lyric-section ${cls}">${section.label ? `<span class="section-label">${escapeHtml(section.label)}</span>` : ""}<p>${escapeHtml(body)}</p></div>`;
   }).join("");
 }
 
-function buildNavigation() {
-  const nav = document.querySelector("#track-nav");
-  nav.innerHTML = acts.map((act, actIndex) => {
-    const links = tracks.filter(track => track.act === actIndex).map(track => `<button class="track-link" type="button" data-index="${track.number - 1}"><span>${String(track.number).padStart(2, "0")}</span><span>${escapeHtml(track.title)}</span></button>`).join("");
-    return `<div class="act-label">Act ${act.number} · ${act.title}</div>${links}`;
-  }).join("");
-}
-
+const albumBySlug = slug => albums.find(item => item.slug === slug) || albums[0];
 const lyricCache = new Map();
+let activeAlbum = albumBySlug(new URLSearchParams(window.location.search).get("album"));
 let activeIndex = 0;
 let youtubePlayer = null;
 let youtubePlayerReady = false;
@@ -94,18 +172,73 @@ let playingVideoId = "";
 let progressTimer = null;
 let progressMilestones = new Set();
 
-function trackAlbumEvent(eventName, track = tracks[activeIndex], parameters = {}) {
-  const act = acts[track.act];
+function buildAlbumJourney() {
+  const container = document.querySelector("#album-chapters");
+  container.innerHTML = albums.map(item => `
+    <article class="album-chapter" data-chapter="${item.slug}">
+      <div class="album-chapter-art"><img src="${item.artwork}" alt="${escapeHtml(item.title)} album artwork" loading="lazy"></div>
+      <div class="album-chapter-copy">
+        <p class="eyebrow">Album ${item.number} · ${item.tracks.length} songs</p>
+        <h3>${escapeHtml(item.title)}</h3>
+        <p class="album-subtitle">${escapeHtml(item.subtitle)}</p>
+        <blockquote>“${escapeHtml(item.question)}”</blockquote>
+        ${item.story.map(paragraph => `<p>${escapeHtml(paragraph)}</p>`).join("")}
+        <button class="chapter-action" type="button" data-select-album="${item.slug}">Enter ${escapeHtml(item.title)} <span aria-hidden="true">→</span></button>
+      </div>
+    </article>
+  `).join("");
+}
+
+function buildNavigation() {
+  const nav = document.querySelector("#track-nav");
+  const sections = activeAlbum.sections.length ? activeAlbum.sections : [{ number: activeAlbum.number, title: activeAlbum.movement }];
+  nav.innerHTML = sections.map((section, sectionIndex) => {
+    const links = activeAlbum.tracks
+      .map((track, index) => ({ track, index }))
+      .filter(({ track }) => activeAlbum.sections.length ? track.section === sectionIndex : true)
+      .map(({ track, index }) => `<button class="track-link" type="button" data-index="${index}"><span>${String(index + 1).padStart(2, "0")}</span><span>${escapeHtml(track.title)}</span></button>`)
+      .join("");
+    const label = activeAlbum.sections.length ? `Act ${section.number} · ${section.title}` : `Movement · ${section.title}`;
+    return `<div class="act-label">${escapeHtml(label)}</div>${links}`;
+  }).join("");
+
+  nav.querySelectorAll(".track-link").forEach(button => button.addEventListener("click", () => loadTrack(Number(button.dataset.index), true, "track_list")));
+}
+
+function buildArchitecture() {
+  const section = document.querySelector("#architecture");
+  if (!activeAlbum.sections.length) {
+    section.hidden = true;
+    return;
+  }
+  section.hidden = false;
+  document.querySelector("#architecture-title").innerHTML = "Four acts.<br>One commission.";
+  document.querySelector("#architecture-description").textContent = "Carry It Forward has its own four-act structure within the larger four-album journey. Each act moves from confession toward a life commissioned to carry faithfulness forward.";
+  document.querySelector("#act-grid").innerHTML = activeAlbum.sections.map((sectionItem, index) => {
+    const firstTrackIndex = activeAlbum.tracks.findIndex(track => track.section === index);
+    const firstTrack = activeAlbum.tracks[firstTrackIndex];
+    return `<article class="act-card"><div class="act-card-image" style="background-image:url('${activeAlbum.artwork}')"></div><span>Act ${sectionItem.number}</span><h3>${escapeHtml(sectionItem.title)}</h3><p>${escapeHtml(sectionItem.note)}</p><button type="button" data-start="${firstTrackIndex}">Begin with “${escapeHtml(firstTrack.title)}” →</button></article>`;
+  }).join("");
+  document.querySelectorAll("[data-start]").forEach(button => button.addEventListener("click", () => {
+    const index = Number(button.dataset.start);
+    trackAlbumEvent("movement_start", activeAlbum.tracks[index], { selection_method: "movement_card" });
+    document.querySelector("#album").scrollIntoView({ behavior: "smooth" });
+    loadTrack(index, true, "movement_card");
+  }));
+}
+
+function trackAlbumEvent(eventName, track = activeAlbum.tracks[activeIndex], parameters = {}) {
+  const section = activeAlbum.sections[track.section];
   window.fsAnalytics?.track(eventName, {
     content_type: "song",
+    album_title: activeAlbum.title,
+    album_slug: activeAlbum.slug,
     song_title: track.title,
-    song_number: track.number,
+    song_number: activeIndex + 1,
     song_slug: track.slug,
-    video_id: track.video,
-    video_title: track.title,
-    video_url: `https://www.youtube.com/watch?v=${track.video}`,
-    movement_number: track.act + 1,
-    movement_name: `Act ${act.number} · ${act.title}`,
+    video_id: track.video || "pending",
+    movement_number: section ? track.section + 1 : 1,
+    movement_name: section ? `Act ${section.number} · ${section.title}` : activeAlbum.movement,
     ...parameters
   });
 }
@@ -126,15 +259,11 @@ function startProgressTracking() {
     const duration = youtubePlayer.getDuration();
     const currentTime = youtubePlayer.getCurrentTime();
     if (!duration || !Number.isFinite(currentTime)) return;
-
     const percent = Math.floor((currentTime / duration) * 100);
     [25, 50, 75].forEach(milestone => {
       if (percent < milestone || progressMilestones.has(milestone)) return;
       progressMilestones.add(milestone);
-      trackAlbumEvent("song_progress", tracks[activeIndex], {
-        percent_complete: milestone,
-        selection_method: selectionMethod
-      });
+      trackAlbumEvent("song_progress", activeAlbum.tracks[activeIndex], { percent_complete: milestone, selection_method: selectionMethod });
     });
   }, 1000);
 }
@@ -145,12 +274,25 @@ function playerUrl(videoId, autoplay) {
 }
 
 function setPlayerTrack(track, autoplay) {
+  const iframe = document.querySelector("#video-player");
+  const placeholder = document.querySelector("#video-placeholder");
+  if (!track.video) {
+    stopProgressTracking();
+    if (youtubePlayerReady && youtubePlayer?.stopVideo) youtubePlayer.stopVideo();
+    iframe.hidden = true;
+    placeholder.hidden = false;
+    placeholder.style.backgroundImage = `linear-gradient(rgba(5,6,5,.62), rgba(5,6,5,.9)), url('${activeAlbum.artwork}')`;
+    document.querySelector("#video-placeholder-title").textContent = track.title;
+    return;
+  }
+  placeholder.hidden = true;
+  iframe.hidden = false;
   if (youtubePlayerReady && youtubePlayer) {
     if (autoplay) youtubePlayer.loadVideoById(track.video);
     else youtubePlayer.cueVideoById(track.video);
-    return;
+  } else {
+    iframe.src = playerUrl(track.video, autoplay);
   }
-  document.querySelector("#video-player").src = playerUrl(track.video, autoplay);
 }
 
 window.onYouTubeIframeAPIReady = () => {
@@ -161,7 +303,8 @@ window.onYouTubeIframeAPIReady = () => {
         youtubePlayer.setOption("captions", "track", {});
       },
       onStateChange: event => {
-        const track = tracks[activeIndex];
+        const track = activeAlbum.tracks[activeIndex];
+        if (!track.video) return;
         const playerVideoId = youtubePlayer.getVideoData()?.video_id;
         if (playerVideoId && playerVideoId !== track.video) return;
         if (event.data === window.YT.PlayerState.PLAYING) {
@@ -169,26 +312,16 @@ window.onYouTubeIframeAPIReady = () => {
             playingVideoId = track.video;
             progressMilestones = new Set();
             trackAlbumEvent("song_start", track, { selection_method: selectionMethod });
-            trackAlbumEvent(listeningEventName(track), track, {
-              selection_method: selectionMethod,
-              listening_status: "started"
-            });
+            trackAlbumEvent(listeningEventName(track), track, { selection_method: selectionMethod, listening_status: "started" });
           }
           startProgressTracking();
         } else if (event.data === window.YT.PlayerState.PAUSED) {
           stopProgressTracking();
-          trackAlbumEvent("song_pause", track, {
-            elapsed_seconds: Math.round(youtubePlayer.getCurrentTime() || 0),
-            selection_method: selectionMethod
-          });
-        }
-        if (event.data === window.YT.PlayerState.ENDED && activeIndex < tracks.length - 1) {
-          stopProgressTracking();
-          trackAlbumEvent("song_complete", track, { selection_method: selectionMethod });
-          loadTrack(activeIndex + 1, true, "automatic_next");
+          trackAlbumEvent("song_pause", track, { elapsed_seconds: Math.round(youtubePlayer.getCurrentTime() || 0), selection_method: selectionMethod });
         } else if (event.data === window.YT.PlayerState.ENDED) {
           stopProgressTracking();
           trackAlbumEvent("song_complete", track, { selection_method: selectionMethod });
+          if (activeIndex < activeAlbum.tracks.length - 1) loadTrack(activeIndex + 1, true, "automatic_next");
         }
       }
     }
@@ -202,60 +335,89 @@ function initializeYouTubeApi() {
   document.head.appendChild(script);
 }
 
+function lyricsPlaceholder(track, failed = false) {
+  return `<div class="lyrics-unavailable"><span>${failed ? "Lyrics unavailable" : "Track context"}</span><h4>${escapeHtml(track.title)}</h4><p>${escapeHtml(track.summary)}</p><strong>${failed ? "The lyric file could not be opened." : "Official lyrics will be added here when they are ready."}</strong></div>`;
+}
+
 async function loadTrack(index, autoplay = false, method = "direct") {
   stopProgressTracking();
-  activeIndex = (index + tracks.length) % tracks.length;
+  activeIndex = (index + activeAlbum.tracks.length) % activeAlbum.tracks.length;
   selectionMethod = method;
   playingVideoId = "";
   progressMilestones = new Set();
-  const track = tracks[activeIndex];
-  const act = acts[track.act];
+  const track = activeAlbum.tracks[activeIndex];
+  const section = activeAlbum.sections[track.section];
+
   document.querySelectorAll(".track-link").forEach(button => button.classList.toggle("active", Number(button.dataset.index) === activeIndex));
   const activeButton = document.querySelector(`.track-link[data-index="${activeIndex}"]`);
   if (autoplay) activeButton?.scrollIntoView({ block: "nearest", inline: "nearest" });
 
-  document.querySelector("#active-kicker").textContent = `Track ${String(track.number).padStart(2, "0")} · Act ${act.number} · ${act.title}`;
+  const movement = section ? `Act ${section.number} · ${section.title}` : activeAlbum.movement;
+  document.querySelector("#active-kicker").textContent = `Track ${String(activeIndex + 1).padStart(2, "0")} · ${movement}`;
   document.querySelector("#active-title").textContent = track.title;
   document.querySelector("#lyrics-title").textContent = track.title;
-  document.querySelector("#track-position").textContent = `${String(track.number).padStart(2, "0")} / ${tracks.length}`;
-  document.querySelector("#active-act-note").textContent = act.note;
-  document.querySelector("#youtube-link").href = `https://www.youtube.com/watch?v=${track.video}`;
+  document.querySelector("#track-position").textContent = `${String(activeIndex + 1).padStart(2, "0")} / ${activeAlbum.tracks.length}`;
+  document.querySelector("#active-act-note").textContent = track.summary;
+
+  const youtubeLink = document.querySelector("#youtube-link");
+  youtubeLink.hidden = !track.video;
+  youtubeLink.href = track.video ? `https://www.youtube.com/watch?v=${track.video}` : "#";
   setPlayerTrack(track, autoplay);
-  trackAlbumEvent("song_view", track, {
-    selection_method: method,
-    autoplay_requested: autoplay
-  });
+  trackAlbumEvent("song_view", track, { selection_method: method, autoplay_requested: autoplay, content_status: track.video ? "published" : "coming_soon" });
 
   const lyricsPanel = document.querySelector("#active-lyrics");
-  lyricsPanel.innerHTML = "<div class='loading'>Opening the lyrics…</div>";
-  if (!lyricCache.has(track.slug)) {
-    const response = await fetch(`lyrics/${track.slug}.txt`);
-    lyricCache.set(track.slug, renderLyrics(cleanSource(await response.text(), track.title)));
+  lyricsPanel.innerHTML = track.lyrics ? "<div class='loading'>Opening the lyrics…</div>" : lyricsPlaceholder(track);
+  if (track.lyrics) {
+    try {
+      if (!lyricCache.has(track.slug)) {
+        const response = await fetch(`lyrics/${track.slug}.txt`);
+        if (!response.ok) throw new Error("Lyrics unavailable");
+        lyricCache.set(track.slug, renderLyrics(cleanSource(await response.text())));
+      }
+      lyricsPanel.innerHTML = lyricCache.get(track.slug) || lyricsPlaceholder(track, true);
+    } catch {
+      lyricsPanel.innerHTML = lyricsPlaceholder(track, true);
+    }
   }
-  lyricsPanel.innerHTML = lyricCache.get(track.slug);
   lyricsPanel.scrollTop = 0;
+
+  const url = new URL(window.location.href);
+  url.searchParams.set("album", activeAlbum.slug);
+  url.searchParams.set("track", track.slug);
+  window.history.replaceState({}, "", url);
 }
 
-function buildActGrid() {
-  document.querySelector("#act-grid").innerHTML = acts.map((act, index) => {
-    const actTracks = tracks.filter(track => track.act === index);
-    return `<article class="act-card"><div class="act-card-image" style="background-image:url('${act.image}')"></div><span>Act ${act.number}</span><h3>${act.title}</h3><p>${act.note}</p><button type="button" data-start="${actTracks[0].number - 1}">Begin with “${escapeHtml(actTracks[0].title)}” →</button></article>`;
-  }).join("");
+function setAlbumHeader() {
+  document.body.dataset.album = activeAlbum.slug;
+  document.querySelector("#interactive-eyebrow").textContent = `Album ${activeAlbum.number} · ${activeAlbum.movement}`;
+  document.querySelector("#interactive-title").textContent = activeAlbum.title;
+  document.querySelector("#interactive-description").textContent = `“${activeAlbum.question}” Select a song to watch, listen, and read it in the context of the complete album.`;
+  document.querySelector("#rail-album-title").textContent = activeAlbum.title;
+  document.querySelector("#rail-album-count").textContent = `${activeAlbum.tracks.length} songs`;
+  document.querySelectorAll(".album-chapter").forEach(chapter => chapter.classList.toggle("active", chapter.dataset.chapter === activeAlbum.slug));
 }
 
-buildNavigation();
-buildActGrid();
-document.querySelectorAll(".track-link").forEach(button => button.addEventListener("click", () => loadTrack(Number(button.dataset.index), true, "track_list")));
-document.querySelectorAll("[data-start]").forEach(button => button.addEventListener("click", () => {
-  const track = tracks[Number(button.dataset.start)];
-  trackAlbumEvent("movement_start", track, { selection_method: "movement_card" });
-  document.querySelector("#album").scrollIntoView({ behavior: "smooth" });
-  loadTrack(Number(button.dataset.start), true, "movement_card");
-}));
+function loadAlbum(slug, { scroll = false, trackSlug = "", method = "album_select" } = {}) {
+  activeAlbum = albumBySlug(slug);
+  const requestedIndex = trackSlug ? activeAlbum.tracks.findIndex(track => track.slug === trackSlug) : -1;
+  activeIndex = requestedIndex >= 0 ? requestedIndex : 0;
+  setAlbumHeader();
+  buildNavigation();
+  buildArchitecture();
+  loadTrack(activeIndex, false, method);
+  window.fsAnalytics?.track("album_select", { album_title: activeAlbum.title, album_slug: activeAlbum.slug, album_number: activeAlbum.number });
+  if (scroll) document.querySelector("#album").scrollIntoView({ behavior: "smooth" });
+}
+
+buildAlbumJourney();
+document.querySelectorAll("[data-select-album]").forEach(button => button.addEventListener("click", () => loadAlbum(button.dataset.selectAlbum, { scroll: true })));
 document.querySelector("#previous-track").addEventListener("click", () => loadTrack(activeIndex - 1, true, "previous_button"));
 document.querySelector("#next-track").addEventListener("click", () => loadTrack(activeIndex + 1, true, "next_button"));
-initializeYouTubeApi();
-loadTrack(0, false, "initial_load").catch(error => {
-  console.error(error);
-  document.querySelector("#active-lyrics").innerHTML = "<div class='loading'>The lyrics could not be opened.</div>";
+window.addEventListener("popstate", () => {
+  const params = new URLSearchParams(window.location.search);
+  loadAlbum(params.get("album"), { trackSlug: params.get("track") || "", method: "browser_history" });
 });
+
+initializeYouTubeApi();
+const initialParams = new URLSearchParams(window.location.search);
+loadAlbum(activeAlbum.slug, { trackSlug: initialParams.get("track") || "", method: "initial_load" });

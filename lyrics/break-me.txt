@@ -1,4 +1,4 @@
-(Verse 1)
+[Verse 1]
 Father, I’ve got nothing left to bargain.
 Nothing left to prove.
 Nothing left worth holding
@@ -16,7 +16,7 @@ I’ve finally learned they’re Yours.
 Whatever You must take from me…
 I don’t want it anymore.
 
-(Build)
+[Build]
 Break every idol.
 Break every chain.
 Break every kingdom
@@ -26,7 +26,7 @@ That isn’t true.
 Until what’s left…
 Looks like You.
 
-(Chorus)
+[Chorus]
 Break me, Lord!
 Break me completely!
 If this heart won’t bend…
@@ -39,7 +39,7 @@ Not my will…
 But Yours alone.
 Build Your Kingdom from these bones.
 
-(Verse 2)
+[Verse 2]
 Put me in the furnace.
 If the fire makes me clean.
 Every scar I’ve ever carried…
@@ -57,7 +57,7 @@ Then everything is cheap.
 Compared to hearing, “Well done…”
 When eternity speaks.
 
-(Build)
+[Build]
 Lead me.
 Guide me.
 Correct me.
@@ -67,7 +67,7 @@ Know me.
 Nothing hidden.
 Only Thee.
 
-(Breakdown)
+[Breakdown]
 If You have to…
 
 Break…
@@ -88,7 +88,7 @@ Just don’t…
 Leave me…
 The same.
 
-(Bridge)
+[Bridge]
 The clay doesn’t question…
 The hands of the Potter.
 The branch doesn’t argue…
@@ -98,7 +98,7 @@ But it became my freedom.
 So shape me through suffering…
 And breathe Your life into mine.
 
-(Final Chorus)
+[Final Chorus]
 Break me, Lord!
 Break what keeps me from You!
 Mold me, Lord!
@@ -112,7 +112,7 @@ Write redemption on every page.
 Until my life becomes a testimony…
 Of amazing grace.
 
-(Outro)
+[Outro]
 Your will…
 Not mine.
 Your hands…
@@ -121,5 +121,3 @@ Your glory…
 Not mine.
 
 Amen.
-
-#BreakMe #FrequentSuspicion #ChristianMusic #WorshipMusic #CCM #ChristianRock #PraiseAndWorship #Faith #SurrenderToGod #ChristianLyrics #GospelMusic #NewChristianMusic #WorshipSong

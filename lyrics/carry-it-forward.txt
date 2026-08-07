@@ -1,9 +1,9 @@
-(Intro)
+[Intro]
 Lord, You’ve never asked me to hide.
 So here I am, Nothing left but truth.
-Keep me humble, gentle, and kind. 
+Keep me humble, gentle, and kind.
 
-(Verse 1)
+[Verse 1]
 I built my kingdom with my own two hands.
 Watched it crumble like a house of sand.
 Called my pride freedom. Called my sin life.
@@ -13,13 +13,13 @@ I hardened my heart until my spirit broke.
 Now I stand where the rubble meets Your grace.
 Ashes on my hands… tears on my face.
 
-(Build)
+[Build]
 You knew every step before I ran.
 You never stopped pursuing this broken man.
 When I walked away… You remained.
 When I buried hope… You still spoke my name.
 
-(Chorus)
+[Chorus]
 Carry it forward, Lord.
 Finish what You’ve begun.
 Teach these wandering hands
@@ -29,7 +29,7 @@ The Christ they couldn’t see in me.
 Heal what I cannot restore.
 Carry it forward, Lord.
 
-(Verse 2)
+[Verse 2]
 I’ve lived one choice a million times over.
 Every Father’s Day. Every shoulder colder.
 Every empty chair. Every silent prayer.
@@ -39,7 +39,7 @@ PTSD remembers… Your mercy remembers better.
 If I must carry scars until I breathe my last…
 Let them point to You… not to my past.
 
-(Breakdown)
+[Breakdown]
 Break my pride…
 Not my hope.
 Break what’s false…
@@ -49,7 +49,7 @@ What I failed to show.
 Build in me…
 What only You can grow.
 
-(Bridge)
+[Bridge]
 You promised…
 He who began a good work in us…
 Will carry it forward…
@@ -61,11 +61,9 @@ Carry it through generations after me.
 Don’t let my failures be their inheritance.
 Let Your faithfulness be.
 
-(Outro)
+[Outro]
 I can’t rewrite yesterday.
 But I can kneel today.
 You are still making all things new.
 Carry it forward…Until the day…
 You finish what You started.
-
-#CarryItForward #FrequentSuspicion #ChristianMusic #WorshipMusic #CCM #ChristianLyrics #GenerationalHealing #FaithAndFamily #ChristianRock #GraceAndForgiveness #Redemption #Philippians16 #LegacyOfFaith

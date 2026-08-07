@@ -1,10 +1,10 @@
-(Intro)
+[Intro]
 Before the vows…
 Before the rings…
 Before forever had a name…
 You were there.
 
-(Verse 1)
+[Verse 1]
 I thought a covenant was words on a page.
 Something you could trade when love lost its flame.
 I measured forever by the way that I felt.
@@ -14,13 +14,13 @@ You drew the boundary. I crossed the line.
 One selfish moment. One heart untamed.
 One broken promise still bears my name.
 
-(Build)
+[Build]
 You never broke Your covenant.
 I was the one who walked away.
 You stayed faithful through my rebellion.
 You loved me anyway.
 
-(Chorus)
+[Chorus]
 Teach me covenant.
 Teach me to remain.
 When the fire burns low…
@@ -30,7 +30,7 @@ Deeper than desire.
 Build a heart that stays…
 When everything says run.
 
-(Verse 2)
+[Verse 2]
 A covenant isn’t built on feelings.
 It’s forged through mercy… truth… and healing.
 It’s choosing tomorrow when today is hard.
@@ -40,7 +40,7 @@ Standing together… side by side.
 The strongest love I’ve ever seen…
 Was love that stayed when life got mean.
 
-(Breakdown)
+[Breakdown]
 Break my pride.
 Bend my will.
 Teach my heart…
@@ -50,7 +50,7 @@ Not my name…
 Only Yours…
 Forever reign.
 
-(Bridge)
+[Bridge]
 For better or worse…
 I knew the words.
 I just didn’t know…
@@ -60,7 +60,7 @@ Love isn’t found…
 Love is faithful…
 Love stays.
 
-(Final Chorus)
+[Final Chorus]
 Teach me covenant.
 Teach me to endure.
 When my heart grows weak…
@@ -70,11 +70,9 @@ What faithfulness can be.
 Let the man I am becoming…
 Look more and more like Thee.
 
-(Outro)
+[Outro]
 You never abandoned me…
 Even when I abandoned what You gave.
 So write Your covenant…
 Upon my heart.
 And never let me wander again.
-
-#Covenant #FrequentSuspicion #ChristianMusic #WorshipMusic #CCM #ChristianMarriage #FaithAndFamily #ChristianLyrics #MarriageVows #GodsFaithfulness #ChristianRock #GenerationalFaith #SacredCovenant

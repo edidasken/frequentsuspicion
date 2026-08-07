@@ -1,8 +1,8 @@
 # FrequentSuspicion
 
-The official lyric site for **Carry It Forward: From Wreckage to Redemption**.
+The official interactive lyric site for the complete four-album FrequentSuspicion journey.
 
-This is a static site intended for GitHub Pages. It contains the 16-song lyric collection, organized into the album's four-act narrative arc.
+This static GitHub Pages site contains 46 songs across **The War Came Home**, **The Reckoning**, **The Restoration**, and **Carry It Forward**. Published videos and lyrics appear inside the album console; unfinished chapters use intentional placeholders until their official material is ready.
 
 ## Publish with GitHub Pages
 
@@ -17,4 +17,4 @@ Google Analytics 4 uses measurement ID `G-CHECHVWGVV` on the home and about page
 - `movement_start`
 - `outbound_link_click`
 
-Song events include `song_title`, `song_number`, `song_slug`, `video_id`, `movement_number`, `movement_name`, and `selection_method`. Register the parameters you want to use in reports as event-scoped custom dimensions in GA4 Admin → Data display → Custom definitions. `song_progress` also includes `percent_complete`; `song_pause` includes `elapsed_seconds`.
+Song events include `album_title`, `album_slug`, `song_title`, `song_number`, `song_slug`, `video_id`, `movement_number`, `movement_name`, and `selection_method`. Album choices also emit `album_select`. Register the parameters you want to use in reports as event-scoped custom dimensions in GA4 Admin → Data display → Custom definitions. `song_progress` also includes `percent_complete`; `song_pause` includes `elapsed_seconds`.
