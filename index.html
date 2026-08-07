@@ -36,7 +36,7 @@
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
-  <link rel="stylesheet" href="styles.css?v=20260807-4">
+  <link rel="stylesheet" href="styles.css?v=20260807-7">
 </head>
 <body>
   <div class="grain" aria-hidden="true"></div>
@@ -109,10 +109,10 @@
     </section>
 
     <section class="pillars" aria-label="The themes of FrequentSuspicion">
-      <article><span>01</span><h3>Radical Honesty</h3><p>No self-protection. No renamed sin. No edited testimony that makes the singer the hero.</p></article>
-      <article><span>02</span><h3>Grace &amp; Truth</h3><p>Mercy does not bury evidence, and forgiveness does not require the wounded to call evil peace.</p></article>
-      <article><span>03</span><h3>Accountability</h3><p>Spiritual authority carries responsibility. Silence and neutrality have consequences.</p></article>
-      <article><span>04</span><h3>Redemptive Legacy</h3><p>The past cannot be rewritten, but its scars can point beyond failure and toward Christ.</p></article>
+      <button class="pillar-card" type="button" data-pillar="honesty" data-number="01" aria-haspopup="dialog"><h3>Radical Honesty</h3><p>No self-protection. No renamed sin. No edited testimony that makes the singer the hero.</p><span>Explore the Scriptures →</span></button>
+      <button class="pillar-card" type="button" data-pillar="grace" data-number="02" aria-haspopup="dialog"><h3>Grace &amp; Truth</h3><p>Mercy does not bury evidence, and forgiveness does not require the wounded to call evil peace.</p><span>Explore the Scriptures →</span></button>
+      <button class="pillar-card" type="button" data-pillar="accountability" data-number="03" aria-haspopup="dialog"><h3>Accountability</h3><p>Spiritual authority carries responsibility. Silence and neutrality have consequences.</p><span>Explore the Scriptures →</span></button>
+      <button class="pillar-card" type="button" data-pillar="legacy" data-number="04" aria-haspopup="dialog"><h3>Redemptive Legacy</h3><p>The past cannot be rewritten, but its scars can point beyond failure and toward Christ.</p><span>Explore the Scriptures →</span></button>
     </section>
 
     <section class="closing-commission">
@@ -136,6 +136,22 @@
       <a href="#top">Back to top ↑</a>
     </div>
   </footer>
+
+  <div class="pillar-layer" hidden>
+    <div class="pillar-backdrop" data-pillar-close></div>
+    <section class="pillar-dialog" role="dialog" aria-modal="true" aria-labelledby="pillar-dialog-title" tabindex="-1">
+      <header class="pillar-dialog-header">
+        <div><span id="pillar-dialog-number">Pillar 01</span><h2 id="pillar-dialog-title">Radical Honesty</h2></div>
+        <button type="button" data-pillar-close aria-label="Close pillar story">×</button>
+      </header>
+      <div class="pillar-dialog-body">
+        <p class="pillar-dialog-lead" id="pillar-dialog-lead"></p>
+        <div class="pillar-story" id="pillar-story"></div>
+        <div class="pillar-verses" id="pillar-verses"></div>
+        <p class="esv-notice">Scripture quotations marked ESV are from the ESV® Bible, copyright © 2001 by Crossway. Used by permission. All rights reserved.</p>
+      </div>
+    </section>
+  </div>
 
   <div class="reader-dock" aria-label="Reading and safety tools">
     <div class="reader-size-control">
@@ -237,6 +253,7 @@
 
   <script src="analytics.js?v=1" defer></script>
   <script src="app.js?v=20260807-3" defer></script>
+  <script src="pillars.js?v=2" defer></script>
   <script type="module" src="care.js?v=20260802-1"></script>
   <script src="accessibility.js?v=2" defer></script>
   <script src="pwa.js?v=2" defer></script>

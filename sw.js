@@ -1,12 +1,13 @@
-const CACHE_NAME = "frequentsuspicion-shell-v15-verified-navigation";
+const CACHE_NAME = "frequentsuspicion-shell-v18-pillars-and-camo";
 const APP_SHELL = [
   "./",
   "./index.html",
   "./album.html",
   "./about.html",
-  "./styles.css?v=20260807-4",
+  "./styles.css?v=20260807-7",
   "./analytics.js?v=1",
   "./app.js?v=20260807-3",
+  "./pillars.js?v=2",
   "./care.js?v=20260802-1",
   "./data/biblical-counseling.js",
   "./data/apologetics.js",
