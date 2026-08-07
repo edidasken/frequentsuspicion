@@ -2,7 +2,16 @@
 
 The official interactive lyric site for the complete four-album FrequentSuspicion journey.
 
-This static GitHub Pages site contains 46 songs across **The War Came Home**, **The Reckoning**, **The Restoration**, and **Carry It Forward**. Published videos and lyrics appear inside the album console; unfinished chapters use intentional placeholders until their official material is ready.
+This static GitHub Pages site contains 46 songs across **The War Came Home**, **The Reckoning**, **The Restoration**, and **Carry It Forward**. The homepage presents the complete journey; each album opens in its own interactive console. Published videos and lyrics appear together, while unfinished chapters use intentional placeholders until their official material is ready.
+
+## Interactive album routes
+
+- `album.html#the-war-came-home`
+- `album.html#the-reckoning`
+- `album.html#the-restoration`
+- `album.html#carry-it-forward`
+
+The matching homepage chapters also have stable anchors at `index.html#<album-slug>`.
 
 ## Publish with GitHub Pages
 

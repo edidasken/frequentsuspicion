@@ -36,7 +36,7 @@
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
-  <link rel="stylesheet" href="styles.css?v=20260807-1">
+  <link rel="stylesheet" href="styles.css?v=20260807-2">
 </head>
 <body>
   <div class="grain" aria-hidden="true"></div>
@@ -86,64 +86,6 @@
       <div class="album-chapters" id="album-chapters"></div>
     </section>
 
-    <section class="interactive-album" id="album">
-      <div class="section-intro">
-        <div>
-          <p class="eyebrow" id="interactive-eyebrow">Watch · Listen · Read</p>
-          <h2 id="interactive-title">The War Came Home</h2>
-        </div>
-        <p id="interactive-description">Select a song to enter its chapter. The video, track context, and published lyrics stay together.</p>
-      </div>
-
-      <div class="album-console">
-        <aside class="console-tracks" aria-label="Album track list">
-          <div class="rail-heading">
-            <p id="rail-album-title">The War Came Home</p>
-            <span id="rail-album-count">9 songs</span>
-          </div>
-          <nav id="track-nav"></nav>
-        </aside>
-
-        <section class="console-stage" aria-live="polite">
-          <div class="video-shell">
-            <iframe id="video-player" title="FrequentSuspicion video player" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            <div class="video-placeholder" id="video-placeholder" hidden>
-              <div>
-                <span>Video coming soon</span>
-                <h3 id="video-placeholder-title">Song title</h3>
-                <p>The chapter is in place. Its video will appear here when it is published.</p>
-              </div>
-            </div>
-          </div>
-          <div class="now-playing">
-            <div>
-              <p id="active-kicker">Track 01 · Act I</p>
-              <h3 id="active-title">My Dumpster Fire</h3>
-            </div>
-            <div class="transport" aria-label="Album navigation">
-              <button id="previous-track" type="button" aria-label="Previous song">←</button>
-              <span id="track-position">01 / 16</span>
-              <button id="next-track" type="button" aria-label="Next song">→</button>
-            </div>
-          </div>
-          <p class="active-act-note" id="active-act-note"></p>
-        </section>
-
-        <section class="console-lyrics" aria-label="Lyrics">
-          <div class="lyrics-toolbar">
-            <div>
-              <span>Official lyrics</span>
-              <strong id="lyrics-title">My Dumpster Fire</strong>
-            </div>
-            <a id="youtube-link" href="#" target="_blank" rel="noreferrer">Open on YouTube ↗</a>
-          </div>
-          <div class="lyrics-scroll" id="active-lyrics" role="region" aria-label="Scrollable song lyrics" tabindex="0">
-            <div class="loading">Opening the lyrics…</div>
-          </div>
-        </section>
-      </div>
-    </section>
-
     <section class="story" id="story">
       <div class="story-art" aria-hidden="true"></div>
       <div class="story-copy">
@@ -162,14 +104,6 @@
       <article><span>02</span><h3>Grace &amp; Truth</h3><p>Mercy does not bury evidence, and forgiveness does not require the wounded to call evil peace.</p></article>
       <article><span>03</span><h3>Accountability</h3><p>Spiritual authority carries responsibility. Silence and neutrality have consequences.</p></article>
       <article><span>04</span><h3>Redemptive Legacy</h3><p>The past cannot be rewritten, but its scars can point beyond failure and toward Christ.</p></article>
-    </section>
-
-    <section class="journey" id="architecture">
-      <div class="section-intro">
-        <div><p class="eyebrow">Inside Album Four</p><h2 id="architecture-title">Four acts.<br>One commission.</h2></div>
-        <p id="architecture-description">Carry It Forward has its own four-act structure within the larger four-album journey.</p>
-      </div>
-      <div class="act-grid" id="act-grid"></div>
     </section>
 
     <section class="closing-commission">
@@ -293,7 +227,7 @@
   </div>
 
   <script src="analytics.js?v=1" defer></script>
-  <script src="app.js?v=20260807-1" defer></script>
+  <script src="app.js?v=20260807-2" defer></script>
   <script type="module" src="care.js?v=20260802-1"></script>
   <script src="accessibility.js?v=1" defer></script>
   <script src="pwa.js?v=2" defer></script>

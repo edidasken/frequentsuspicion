@@ -14,7 +14,7 @@ const albums = [
     subtitle: "Recognizing the Destruction",
     movement: "The Wound / The Soldier Returns",
     question: "Why is the war still here when the war is over?",
-    artwork: "assets/artwork/the-war-came-home-youtube-playlist-master.png",
+    artwork: "assets/artwork/the-war-came-home-site-textless.png",
     story: [
       "The War Came Home was written to name what happened when the battlefield did not remain overseas. The body returned, but vigilance, memory, fear, sleeplessness, and the instinct to search for danger came home too. These songs move through quiet rooms, fractured perception, interrupted celebrations, and the exhausting distance between knowing you are safe and actually feeling safe. They tell the truth about PTSD without allowing trauma to become the complete definition of the man carrying it.",
       "The purpose of this album is recognition. A wound cannot be healed while it remains unnamed, and suffering cannot be understood while it is treated only as weakness or failure. The album does not use trauma to excuse harm; it gives language to the battle so responsibility and compassion can exist together. In the darkest valley, the Shepherd is still present. Beneath the startle response, there is still a man—and the wound is not the end of his identity."
@@ -38,7 +38,7 @@ const albums = [
     subtitle: "The Story and The Truth",
     movement: "The Story They Told / The Truth Revealed",
     question: "Who gets to define who I am?",
-    artwork: "assets/artwork/the-reckoning-youtube-master.png",
+    artwork: "assets/artwork/the-reckoning-site-textless.png",
     story: [
       "The Reckoning was written from the struggle over who gets to define a person’s identity. It confronts the stories people construct, the whispers that travel before truth is heard, the difference between public appearance and private reality, and the judgment of those who speak without understanding the full cost. It follows the moment when accusations stop sounding like truth and become what they always were: echoes produced by voices that never possessed final authority.",
       "This is not an album about revenge. It is about discernment, boundaries, and the exposure of borrowed authority. No person, institution, relationship, or accusation has the right to occupy God’s throne. The purpose found in this suffering is the freedom to stop living inside another person’s account of who you are. Truth does not require retaliation. Sometimes the reckoning is complete when the false throne is left empty and the old battlefield no longer receives another day of your life."
@@ -62,7 +62,7 @@ const albums = [
     subtitle: "Death and Rebirth",
     movement: "The Healing / Becoming Whole",
     question: "Who am I becoming now?",
-    artwork: "assets/artwork/death-day-youtube-master.png",
+    artwork: "assets/artwork/the-restoration-site-textless.png",
     story: [
       "The Restoration was written about what happens after survival and confrontation—when the question is no longer only what happened, but who you are becoming now. These songs follow the ending of destructive cycles, the thawing of places that became numb, and the recovery of love as truth and grace rather than disappearance. They return to the well, to childlike dependence on the Father, and to the identity God intended before fear, shame, trauma, and other people’s expectations began competing for authorship.",
       "Restoration does not mean recovering the old life exactly as it was. Some former identities, defenses, dreams, and ways of surviving must be surrendered. That is the death and rebirth at the center of the album. Nothing placed on God’s altar is wasted—not grief, wreckage, memory, or the years spent wandering. The purpose of healing is not merely to feel better. It is to become capable of deeper love, honest surrender, mercy, and a life received from God rather than constructed from pain."
@@ -89,7 +89,7 @@ const albums = [
     subtitle: "From Wreckage to Redemption",
     movement: "Confession / Formation / Discernment / Commission",
     question: "How can God carry redemption forward through everything that was broken?",
-    artwork: "assets/album-cover.png",
+    artwork: "assets/artwork/carry-it-forward-site-textless.png",
     playlist: "https://music.youtube.com/playlist?list=PLYnXteIAoUN8",
     story: [
       "Carry It Forward was written as the culmination of the journey. It begins with confession without disguise, moves through surrender and formation, sharpens into discernment, and ends in commission. These songs own sin without excuses, confront pride and counterfeit love, grieve damaged relationships, challenge spiritual silence, and ask God to rebuild what remains. The narrator is neither edited into the hero nor reduced permanently to his worst choices.",
@@ -163,7 +163,8 @@ function renderLyrics(raw) {
 
 const albumBySlug = slug => albums.find(item => item.slug === slug) || albums[0];
 const lyricCache = new Map();
-let activeAlbum = albumBySlug(new URLSearchParams(window.location.search).get("album"));
+const routedAlbumSlug = window.location.hash.slice(1) || new URLSearchParams(window.location.search).get("album");
+let activeAlbum = albumBySlug(routedAlbumSlug);
 let activeIndex = 0;
 let youtubePlayer = null;
 let youtubePlayerReady = false;
@@ -174,19 +175,30 @@ let progressMilestones = new Set();
 
 function buildAlbumJourney() {
   const container = document.querySelector("#album-chapters");
+  if (!container) return;
   container.innerHTML = albums.map(item => `
-    <article class="album-chapter" data-chapter="${item.slug}">
-      <div class="album-chapter-art"><img src="${item.artwork}" alt="${escapeHtml(item.title)} album artwork" loading="lazy"></div>
+    <article class="album-chapter" id="${item.slug}" data-chapter="${item.slug}">
+      <a class="album-chapter-art" href="album.html#${item.slug}" aria-label="Enter the interactive ${escapeHtml(item.title)} album"><img src="${item.artwork}" alt="${escapeHtml(item.title)} album artwork" loading="lazy"></a>
       <div class="album-chapter-copy">
         <p class="eyebrow">Album ${item.number} · ${item.tracks.length} songs</p>
         <h3>${escapeHtml(item.title)}</h3>
         <p class="album-subtitle">${escapeHtml(item.subtitle)}</p>
         <blockquote>“${escapeHtml(item.question)}”</blockquote>
         ${item.story.map(paragraph => `<p>${escapeHtml(paragraph)}</p>`).join("")}
-        <button class="chapter-action" type="button" data-select-album="${item.slug}">Enter ${escapeHtml(item.title)} <span aria-hidden="true">→</span></button>
+        <a class="chapter-action" href="album.html#${item.slug}">Enter ${escapeHtml(item.title)} <span aria-hidden="true">→</span></a>
       </div>
     </article>
   `).join("");
+  const routedChapter = albumBySlug(window.location.hash.slice(1));
+  if (window.location.hash && routedChapter.slug === window.location.hash.slice(1)) {
+    window.requestAnimationFrame(() => document.querySelector(`#${routedChapter.slug}`)?.scrollIntoView());
+  }
+}
+
+function buildAlbumSwitcher() {
+  const switcher = document.querySelector("#album-switcher");
+  if (!switcher) return;
+  switcher.innerHTML = albums.map(item => `<a href="album.html#${item.slug}" data-album-route="${item.slug}"><span>Album ${item.number}</span>${escapeHtml(item.title)}</a>`).join("");
 }
 
 function buildNavigation() {
@@ -382,19 +394,39 @@ async function loadTrack(index, autoplay = false, method = "direct") {
   lyricsPanel.scrollTop = 0;
 
   const url = new URL(window.location.href);
-  url.searchParams.set("album", activeAlbum.slug);
+  url.searchParams.delete("album");
   url.searchParams.set("track", track.slug);
+  url.hash = activeAlbum.slug;
   window.history.replaceState({}, "", url);
 }
 
 function setAlbumHeader() {
   document.body.dataset.album = activeAlbum.slug;
+  document.title = `${activeAlbum.title} — Interactive Album · FrequentSuspicion`;
+  const heroArt = document.querySelector("#album-route-art");
+  if (heroArt) {
+    heroArt.src = activeAlbum.artwork;
+    heroArt.alt = `${activeAlbum.title} album artwork`;
+  }
+  const routeNumber = document.querySelector("#album-route-number");
+  const routeTitle = document.querySelector("#album-route-title");
+  const routeSubtitle = document.querySelector("#album-route-subtitle");
+  const routeQuestion = document.querySelector("#album-route-question");
+  if (routeNumber) routeNumber.textContent = `Album ${activeAlbum.number} · ${activeAlbum.tracks.length} songs`;
+  if (routeTitle) routeTitle.textContent = activeAlbum.title;
+  if (routeSubtitle) routeSubtitle.textContent = activeAlbum.subtitle;
+  if (routeQuestion) routeQuestion.textContent = `“${activeAlbum.question}”`;
   document.querySelector("#interactive-eyebrow").textContent = `Album ${activeAlbum.number} · ${activeAlbum.movement}`;
   document.querySelector("#interactive-title").textContent = activeAlbum.title;
   document.querySelector("#interactive-description").textContent = `“${activeAlbum.question}” Select a song to watch, listen, and read it in the context of the complete album.`;
   document.querySelector("#rail-album-title").textContent = activeAlbum.title;
   document.querySelector("#rail-album-count").textContent = `${activeAlbum.tracks.length} songs`;
-  document.querySelectorAll(".album-chapter").forEach(chapter => chapter.classList.toggle("active", chapter.dataset.chapter === activeAlbum.slug));
+  document.querySelectorAll("[data-album-route]").forEach(link => {
+    const active = link.dataset.albumRoute === activeAlbum.slug;
+    link.classList.toggle("active", active);
+    if (active) link.setAttribute("aria-current", "page");
+    else link.removeAttribute("aria-current");
+  });
 }
 
 function loadAlbum(slug, { scroll = false, trackSlug = "", method = "album_select" } = {}) {
@@ -406,18 +438,20 @@ function loadAlbum(slug, { scroll = false, trackSlug = "", method = "album_selec
   buildArchitecture();
   loadTrack(activeIndex, false, method);
   window.fsAnalytics?.track("album_select", { album_title: activeAlbum.title, album_slug: activeAlbum.slug, album_number: activeAlbum.number });
-  if (scroll) document.querySelector("#album").scrollIntoView({ behavior: "smooth" });
+  if (scroll) document.querySelector("#album")?.scrollIntoView({ behavior: "smooth" });
 }
 
 buildAlbumJourney();
-document.querySelectorAll("[data-select-album]").forEach(button => button.addEventListener("click", () => loadAlbum(button.dataset.selectAlbum, { scroll: true })));
-document.querySelector("#previous-track").addEventListener("click", () => loadTrack(activeIndex - 1, true, "previous_button"));
-document.querySelector("#next-track").addEventListener("click", () => loadTrack(activeIndex + 1, true, "next_button"));
-window.addEventListener("popstate", () => {
-  const params = new URLSearchParams(window.location.search);
-  loadAlbum(params.get("album"), { trackSlug: params.get("track") || "", method: "browser_history" });
-});
-
-initializeYouTubeApi();
-const initialParams = new URLSearchParams(window.location.search);
-loadAlbum(activeAlbum.slug, { trackSlug: initialParams.get("track") || "", method: "initial_load" });
+if (document.querySelector("#album")) {
+  buildAlbumSwitcher();
+  document.querySelector("#previous-track").addEventListener("click", () => loadTrack(activeIndex - 1, true, "previous_button"));
+  document.querySelector("#next-track").addEventListener("click", () => loadTrack(activeIndex + 1, true, "next_button"));
+  window.addEventListener("hashchange", () => {
+    const params = new URLSearchParams(window.location.search);
+    loadAlbum(window.location.hash.slice(1), { trackSlug: params.get("track") || "", method: "album_route" });
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+  initializeYouTubeApi();
+  const initialParams = new URLSearchParams(window.location.search);
+  loadAlbum(activeAlbum.slug, { trackSlug: initialParams.get("track") || "", method: "initial_load" });
+}

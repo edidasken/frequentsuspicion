@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CHECHVWGVV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-CHECHVWGVV');
+  </script>
+  <meta name="theme-color" content="#090b08">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="description" content="Watch, listen, and read the four-album FrequentSuspicion journey.">
+  <title>Interactive Album — FrequentSuspicion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Libre+Franklin:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
+  <link rel="stylesheet" href="styles.css?v=20260807-2">
+</head>
+<body class="album-page">
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="album-route-hero" id="top">
+    <nav class="topbar" aria-label="Primary navigation">
+      <a class="wordmark" href="index.html"><span>F</span>requent<span>S</span>uspicion</a>
+      <div class="nav-links">
+        <a href="index.html#journey">All Albums</a>
+        <a href="about.html">About</a>
+        <a class="youtube-music-icon" href="https://www.youtube.com/@FrequentSuspicion" target="_blank" rel="noreferrer" aria-label="Visit FrequentSuspicion on YouTube" title="Visit FrequentSuspicion on YouTube"><span aria-hidden="true"></span></a>
+      </div>
+    </nav>
+    <div class="album-route-art">
+      <img id="album-route-art" src="assets/artwork/the-war-came-home-site-textless.png" alt="The War Came Home album artwork">
+    </div>
+    <div class="album-route-copy">
+      <a class="route-back" href="index.html#journey">← The complete journey</a>
+      <p class="eyebrow" id="album-route-number">Album I · 9 songs</p>
+      <h1 id="album-route-title">The War Came Home</h1>
+      <p class="album-route-subtitle" id="album-route-subtitle">Recognizing the Destruction</p>
+      <blockquote id="album-route-question">“Why is the war still here when the war is over?”</blockquote>
+      <a class="primary-action" href="#album">Enter the album <span aria-hidden="true">↓</span></a>
+    </div>
+  </header>
+
+  <main>
+    <nav class="album-switcher" id="album-switcher" aria-label="Choose an interactive album"></nav>
+
+    <section class="interactive-album" id="album">
+      <div class="section-intro">
+        <div>
+          <p class="eyebrow" id="interactive-eyebrow">Watch · Listen · Read</p>
+          <h2 id="interactive-title">The War Came Home</h2>
+        </div>
+        <p id="interactive-description">Select a song to enter its chapter. The video, track context, and published lyrics stay together.</p>
+      </div>
+
+      <div class="album-console">
+        <aside class="console-tracks" aria-label="Album track list">
+          <div class="rail-heading"><p id="rail-album-title">The War Came Home</p><span id="rail-album-count">9 songs</span></div>
+          <nav id="track-nav"></nav>
+        </aside>
+        <section class="console-stage" aria-live="polite">
+          <div class="video-shell">
+            <iframe id="video-player" title="FrequentSuspicion video player" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <div class="video-placeholder" id="video-placeholder" hidden><div><span>Video coming soon</span><h3 id="video-placeholder-title">Song title</h3><p>The chapter is in place. Its video will appear here when it is published.</p></div></div>
+          </div>
+          <div class="now-playing">
+            <div><p id="active-kicker">Track 01</p><h3 id="active-title">Song title</h3></div>
+            <div class="transport" aria-label="Album navigation"><button id="previous-track" type="button" aria-label="Previous song">←</button><span id="track-position">01 / 09</span><button id="next-track" type="button" aria-label="Next song">→</button></div>
+          </div>
+          <p class="active-act-note" id="active-act-note"></p>
+        </section>
+        <section class="console-lyrics" aria-label="Lyrics">
+          <div class="lyrics-toolbar"><div><span>Official lyrics</span><strong id="lyrics-title">Song title</strong></div><a id="youtube-link" href="#" target="_blank" rel="noreferrer">Open on YouTube ↗</a></div>
+          <div class="lyrics-scroll" id="active-lyrics" role="region" aria-label="Scrollable song lyrics" tabindex="0"><div class="loading">Opening the lyrics…</div></div>
+        </section>
+      </div>
+    </section>
+
+    <section class="journey" id="architecture" hidden>
+      <div class="section-intro">
+        <div><p class="eyebrow">Inside Album Four</p><h2 id="architecture-title">Four acts.<br>One commission.</h2></div>
+        <p id="architecture-description">Carry It Forward has its own four-act structure within the larger four-album journey.</p>
+      </div>
+      <div class="act-grid" id="act-grid"></div>
+    </section>
+
+    <section class="album-route-closing">
+      <p class="eyebrow">Continue the testimony</p>
+      <h2>Four albums.<br><span>One journey.</span></h2>
+      <a class="primary-action" href="index.html#journey">Return to all four albums →</a>
+    </section>
+  </main>
+
+  <footer>
+    <div><p class="footer-mark">FrequentSuspicion</p><p>Music, lyrics, and visual concept by FrequentSuspicion.</p></div>
+    <div class="footer-links"><a href="index.html#journey">All albums</a><a href="https://www.youtube.com/@FrequentSuspicion" target="_blank" rel="noreferrer">YouTube</a><a href="#top">Back to top ↑</a></div>
+  </footer>
+
+  <script src="analytics.js?v=1" defer></script>
+  <script src="app.js?v=20260807-2" defer></script>
+  <script src="accessibility.js?v=1" defer></script>
+  <script src="pwa.js?v=2" defer></script>
+</body>
+</html>
