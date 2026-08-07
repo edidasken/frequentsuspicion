@@ -1,10 +1,10 @@
-const CACHE_NAME = "frequentsuspicion-shell-v18-pillars-and-camo";
+const CACHE_NAME = "frequentsuspicion-shell-v19-finer-camo-type";
 const APP_SHELL = [
   "./",
   "./index.html",
   "./album.html",
   "./about.html",
-  "./styles.css?v=20260807-7",
+  "./styles.css?v=20260807-8",
   "./analytics.js?v=1",
   "./app.js?v=20260807-3",
   "./pillars.js?v=2",
