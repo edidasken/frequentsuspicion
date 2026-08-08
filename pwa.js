@@ -1,5 +1,5 @@
 if ("serviceWorker" in navigator) {
-  const release = "20260808-feature-badges";
+  const release = "20260808-global-tools-prayer-return";
   let refreshing = false;
 
   navigator.serviceWorker.addEventListener("controllerchange", () => {

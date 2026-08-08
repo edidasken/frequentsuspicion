@@ -25,6 +25,8 @@ const notice = document.querySelector("[data-care-notice]");
 let mode = "counseling";
 let selectedId = "";
 let returnFocus = null;
+let prayerReturnFocus = null;
+let prayerOpenedFromCare = false;
 let submissionClient;
 let prayerStartedAt = 0;
 
@@ -198,7 +200,10 @@ function prayerForm(topic = "") {
 
 function openPrayerForm(topic) {
   closePrayerForm();
+  prayerReturnFocus = document.activeElement;
+  prayerOpenedFromCare = Boolean(layer && !layer.hidden);
   prayerStartedAt = Date.now();
+  document.body.classList.add("dialog-open");
   document.body.insertAdjacentHTML("beforeend", prayerForm(topic));
   const prayerLayer = document.querySelector("[data-prayer-layer]");
   prayerLayer.querySelectorAll("[data-prayer-close]").forEach(button => button.addEventListener("click", closePrayerForm));
@@ -207,7 +212,12 @@ function openPrayerForm(topic) {
 }
 
 function closePrayerForm() {
-  document.querySelector("[data-prayer-layer]")?.remove();
+  const prayerLayer = document.querySelector("[data-prayer-layer]");
+  if (!prayerLayer) return;
+  prayerLayer.remove();
+  if (!layer || layer.hidden) document.body.classList.remove("dialog-open");
+  if (prayerReturnFocus instanceof HTMLElement) prayerReturnFocus.focus();
+  prayerReturnFocus = null;
 }
 
 async function getSubmissionClient() {
@@ -257,7 +267,8 @@ async function submitPrayerRequest(event) {
       startedAt: prayerStartedAt
     });
     const reference = result.data?.reference ? ` Reference: ${esc(result.data.reference)}.` : "";
-    document.querySelector(".prayer-dialog").innerHTML = `<div class="prayer-success"><span aria-hidden="true">✓</span><small>Request received</small><h3>Your prayer request was sent.</h3><p>It is now in the private Outreach Contacts queue for prayer and personal follow-up.${reference}</p><button type="button" data-prayer-close>Return to the care library</button></div>`;
+    const closeLabel = prayerOpenedFromCare ? "Return to the care library" : "Close prayer request";
+    document.querySelector(".prayer-dialog").innerHTML = `<div class="prayer-success"><span aria-hidden="true">✓</span><small>Request received</small><h3>Your prayer request was sent.</h3><p>It is now in the private Outreach Contacts queue for prayer and personal follow-up.${reference}</p><button type="button" data-prayer-close>${closeLabel}</button></div>`;
     document.querySelector("[data-prayer-close]")?.addEventListener("click", closePrayerForm);
   } catch (requestError) {
     error.textContent = requestError?.message || "The request could not be sent. Please try again.";
@@ -273,7 +284,6 @@ function wireRequestButtons() {
 
 trigger?.addEventListener("click", openCare);
 document.querySelectorAll("[data-open-prayer]").forEach(button => button.addEventListener("click", () => {
-  if (layer.hidden) openCare();
   openPrayerForm("");
 }));
 document.querySelectorAll("[data-care-close]").forEach(button => button.addEventListener("click", closeCare));

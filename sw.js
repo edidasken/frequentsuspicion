@@ -1,4 +1,4 @@
-const CACHE_NAME = "frequentsuspicion-shell-v26-feature-badges";
+const CACHE_NAME = "frequentsuspicion-shell-v27-global-tools-prayer-return";
 
 const APP_SHELL = [
   "./",
@@ -9,10 +9,11 @@ const APP_SHELL = [
   "./analytics.js?v=1",
   "./app.js?v=20260808-3",
   "./pillars.js?v=2",
-  "./care.js?v=20260802-1",
+  "./care.js?v=20260808-2",
+  "./site-tools.js?v=1",
   "./data/biblical-counseling.js",
   "./data/apologetics.js",
-  "./pwa.js?v=8",
+  "./pwa.js?v=9",
   "./accessibility.js?v=2",
   "./manifest.webmanifest",
   "./assets/og-four-album-journey.png",
