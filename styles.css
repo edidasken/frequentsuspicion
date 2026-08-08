@@ -316,7 +316,7 @@ footer { display: flex; justify-content: space-between; gap: 40px; padding: 60px
 .origin-brand, .origin-brand span { display: block; }
 .origin-title h2 .origin-brand { margin-top: .08em; color: var(--olive-bright); }
 .origin-copy { max-width: 690px; color: #fff; }
-.origin-copy .lead { color: var(--bone); font-size: clamp(1.44rem, 2.53vw, 1.84rem); line-height: 1.55; }
+.origin-copy .lead { margin: 0 0 30px; color: var(--bone); font: 600 clamp(1.28rem, 1.9vw, 1.55rem)/1.52 var(--body); letter-spacing: -.018em; text-wrap: balance; }
 .origin-copy blockquote { margin: 60px 0; padding: 24px 0 24px 32px; border-left: 3px solid var(--olive); color: var(--bone); font: 700 clamp(2.3rem, 4.6vw, 3.68rem)/1 var(--display); text-transform: uppercase; }
 .about-confession { min-height: 650px; display: grid; grid-template-columns: .55fr 1.45fr; gap: 60px; align-items: center; padding: 100px clamp(28px, 8vw, 130px); border-top: 1px solid var(--line); background: #090b08; }
 .about-confession.reverse { background: linear-gradient(120deg, rgba(139,145,69,.1), transparent 55%), #060705; }

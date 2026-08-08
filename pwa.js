@@ -1,5 +1,5 @@
 if ("serviceWorker" in navigator) {
-  const release = "20260808-published-catalog";
+  const release = "20260808-force-complete-catalog";
   let refreshing = false;
 
   navigator.serviceWorker.addEventListener("controllerchange", () => {

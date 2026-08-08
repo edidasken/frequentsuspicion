@@ -1,18 +1,18 @@
-const CACHE_NAME = "frequentsuspicion-shell-v23-published-catalog";
+const CACHE_NAME = "frequentsuspicion-shell-v24-force-complete-catalog";
 
 const APP_SHELL = [
   "./",
   "./index.html",
   "./album.html",
   "./about.html",
-  "./styles.css?v=20260808-2",
+  "./styles.css?v=20260808-4",
   "./analytics.js?v=1",
-  "./app.js?v=20260808-2",
+  "./app.js?v=20260808-3",
   "./pillars.js?v=2",
   "./care.js?v=20260802-1",
   "./data/biblical-counseling.js",
   "./data/apologetics.js",
-  "./pwa.js?v=4",
+  "./pwa.js?v=6",
   "./accessibility.js?v=2",
   "./manifest.webmanifest",
   "./assets/og-four-album-journey.png",
@@ -65,8 +65,9 @@ const APP_SHELL = [
   "./lyrics/your-words-are-echoes.txt"
 ];
 
-async function fetchAndCache(request) {
-  const response = await fetch(request);
+async function fetchAndCache(request, bypassHttpCache = false) {
+  const networkRequest = bypassHttpCache ? new Request(request, { cache: "reload" }) : request;
+  const response = await fetch(networkRequest);
   if (response.ok) {
     const cache = await caches.open(CACHE_NAME);
     await cache.put(request, response.clone());
@@ -76,7 +77,7 @@ async function fetchAndCache(request) {
 
 async function networkFirst(request, fallback = "") {
   try {
-    return await fetchAndCache(request);
+    return await fetchAndCache(request, true);
   } catch {
     const cached = await caches.match(request);
     if (cached) return cached;
@@ -98,6 +99,8 @@ self.addEventListener("activate", event => {
     caches.keys()
       .then(keys => Promise.all(keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key))))
       .then(() => self.clients.claim())
+      .then(() => self.clients.matchAll({ type: "window", includeUncontrolled: true }))
+      .then(clients => Promise.all(clients.map(client => client.navigate(client.url))))
   );
 });
 
