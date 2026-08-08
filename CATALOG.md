@@ -30,13 +30,13 @@ The complete catalog contains 46 songs. Published videos and official lyrics are
 
 1. **Broken Me:** They told me who I was. The battle against the identity others assigned.
 2. **The Watchtower:** I saw what was happening. Discernment, isolation, and seeing what others refused to see.
-3. **The Life She Wanted:** I saw the story being rewritten. The contrast between the public image and the hidden cost.
+3. **It’s Over:** The release. Leaving the old battlefield and refusing to live there anymore.
 4. **Whispers in the Ear:** I saw how the story spread. How narratives travel before truth gets heard.
 5. **Stop Casting Stones:** I faced the judgment. The wounded confronting those who judged without understanding.
 6. **Your Words Are Echoes:** The words lost their power. The moment accusations stop controlling identity.
 7. **Borrowed Throne:** False authority was exposed. The realization that no one gets to take God’s seat.
 8. **Your Sunday Best:** The mask. The difference between appearance and reality.
-9. **It’s Over:** The release. Leaving the old battlefield and refusing to live there anymore.
+9. **What is Next:** Repentance accepts consequence and asks God who the man must become now.
 
 ## Album Three — The Restoration
 

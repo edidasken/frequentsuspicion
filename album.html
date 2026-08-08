@@ -22,7 +22,7 @@
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
-  <link rel="stylesheet" href="styles.css?v=20260807-9">
+  <link rel="stylesheet" href="styles.css?v=20260808-2">
 </head>
 <body class="album-page">
   <div class="grain" aria-hidden="true"></div>
@@ -54,7 +54,10 @@
       <h1 id="album-route-title">The War Came Home</h1>
       <p class="album-route-subtitle" id="album-route-subtitle">Recognizing the Destruction</p>
       <blockquote id="album-route-question">“Why is the war still here when the war is over?”</blockquote>
-      <button class="primary-action" type="button" data-scroll-target="#album">Enter the album <span aria-hidden="true">↓</span></button>
+      <div class="album-route-actions">
+        <button class="primary-action" type="button" data-scroll-target="#album">Enter the album <span aria-hidden="true">↓</span></button>
+        <a class="album-playlist-action" id="album-playlist-link" href="https://www.youtube.com/@FrequentSuspicion" target="_blank" rel="noreferrer">Play the full album <span aria-hidden="true">↗</span></a>
+      </div>
     </div>
   </header>
 
@@ -114,8 +117,8 @@
   </footer>
 
   <script src="analytics.js?v=1" defer></script>
-  <script src="app.js?v=20260807-3" defer></script>
+  <script src="app.js?v=20260808-2" defer></script>
   <script src="accessibility.js?v=2" defer></script>
-  <script src="pwa.js?v=2" defer></script>
+  <script src="pwa.js?v=4" defer></script>
 </body>
 </html>

@@ -15,20 +15,21 @@ const albums = [
     movement: "The Wound / The Soldier Returns",
     question: "Why is the war still here when the war is over?",
     artwork: "assets/artwork/the-war-came-home-site-textless.png",
+    playlist: "https://www.youtube.com/playlist?list=PLPo3bQ3s4tZE",
     story: [
       "The War Came Home was written to name what happened when the battlefield did not remain overseas. The body returned, but vigilance, memory, fear, sleeplessness, and the instinct to search for danger came home too. These songs move through quiet rooms, fractured perception, interrupted celebrations, and the exhausting distance between knowing you are safe and actually feeling safe. They tell the truth about PTSD without allowing trauma to become the complete definition of the man carrying it.",
       "The purpose of this album is recognition. A wound cannot be healed while it remains unnamed, and suffering cannot be understood while it is treated only as weakness or failure. The album does not use trauma to excuse harm; it gives language to the battle so responsibility and compassion can exist together. In the darkest valley, the Shepherd is still present. Beneath the startle response, there is still a man—and the wound is not the end of his identity."
     ],
     tracks: [
-      song("The War Came Home", "the-war-came-home", "The realization that the battlefield followed him home. Trauma is no longer overseas; it lives in quiet rooms, relationships, and memories.", { video: "RAQVldP7EG0" }),
-      song("When the Night Goes Quiet", "when-the-night-goes-quiet", "The loneliness of the watchman. When the world sleeps, the mind stays awake."),
-      song("Shattered Lens", "shattered-lens", "Trauma changes perception. Survival skills can become barriers to peace."),
-      song("Wounded, But Still Going", "wounded-but-still-going", "Being wounded does not mean being defeated.", { video: "Rwn6RK86z9U" }),
-      song("September in July", "september-in-july", "Celebration and trauma collide when a beautiful moment becomes a doorway into the past."),
-      song("The Darkest Valley", "the-darkest-valley", "Suffering is faced while discovering that the Shepherd is present in the valley."),
-      song("Sleep Don’t Come Easy", "sleep-dont-come-easy", "The body continues fighting after the battle—the distance between knowing you are safe and feeling safe."),
-      song("When I Close My Eyes", "when-i-close-my-eyes", "The struggle of rest, memory, and what appears when everything becomes quiet.", { video: "HAEO8xOXI90" }),
-      song("The Man Behind the Startle", "the-man-behind-the-startle", "The reaction is not the identity. There is still a man beyond the trauma response.", { video: "-C6pngc4otA" })
+      song("The War Came Home", "the-war-came-home", "The realization that the battlefield followed him home. Trauma is no longer overseas; it lives in quiet rooms, relationships, and memories.", { video: "RAQVldP7EG0", lyrics: true }),
+      song("When the Night Goes Quiet", "when-the-night-goes-quiet", "The loneliness of the watchman. When the world sleeps, the mind stays awake.", { video: "OMIBkj7bos8", lyrics: true }),
+      song("Shattered Lens", "shattered-lens", "Trauma changes perception. Survival skills can become barriers to peace.", { video: "TwCvTTnEaAM", lyrics: true }),
+      song("Wounded, But Still Going", "wounded-but-still-going", "Being wounded does not mean being defeated.", { video: "Rwn6RK86z9U", lyrics: true }),
+      song("September in July", "september-in-july", "Celebration and trauma collide when a beautiful moment becomes a doorway into the past.", { video: "WGGmb7bDTD4", lyrics: true }),
+      song("The Darkest Valley", "the-darkest-valley", "Suffering is faced while discovering that the Shepherd is present in the valley.", { video: "l4CSMFyyFt0", lyrics: true }),
+      song("Sleep Don’t Come Easy", "sleep-dont-come-easy", "The body continues fighting after the battle—the distance between knowing you are safe and feeling safe.", { video: "-WIDXwftu0Q", lyrics: true }),
+      song("When I Close My Eyes", "when-i-close-my-eyes", "The struggle of rest, memory, and what appears when everything becomes quiet.", { video: "HAEO8xOXI90", lyrics: true }),
+      song("The Man Behind the Startle", "the-man-behind-the-startle", "The reaction is not the identity. There is still a man beyond the trauma response.", { video: "-C6pngc4otA", lyrics: true })
     ]
   }),
   album({
@@ -39,20 +40,21 @@ const albums = [
     movement: "The Story They Told / The Truth Revealed",
     question: "Who gets to define who I am?",
     artwork: "assets/artwork/the-reckoning-site-textless.png",
+    playlist: "https://www.youtube.com/playlist?list=PLBK0aBG9kNY4",
     story: [
       "The Reckoning was written from the struggle over who gets to define a person’s identity. It confronts the stories people construct, the whispers that travel before truth is heard, the difference between public appearance and private reality, and the judgment of those who speak without understanding the full cost. It follows the moment when accusations stop sounding like truth and become what they always were: echoes produced by voices that never possessed final authority.",
       "This is not an album about revenge. It is about discernment, boundaries, and the exposure of borrowed authority. No person, institution, relationship, or accusation has the right to occupy God’s throne. The purpose found in this suffering is the freedom to stop living inside another person’s account of who you are. Truth does not require retaliation. Sometimes the reckoning is complete when the false throne is left empty and the old battlefield no longer receives another day of your life."
     ],
     tracks: [
-      song("Broken Me", "broken-me", "They told me who I was. The battle begins against the identity others assigned."),
-      song("The Watchtower", "the-watchtower", "Discernment, isolation, and seeing what others refused to see."),
-      song("The Life She Wanted", "the-life-she-wanted", "The contrast between the public image and the hidden cost of a rewritten story."),
-      song("Whispers in the Ear", "whispers-in-the-ear", "How narratives travel before truth gets heard."),
-      song("Stop Casting Stones", "stop-casting-stones", "The wounded confront those who judged without understanding."),
-      song("Your Words Are Echoes", "your-words-are-echoes", "The moment accusations stop controlling identity."),
-      song("Borrowed Throne", "borrowed-throne", "False authority is exposed. No one gets to take God’s seat."),
-      song("Your Sunday Best", "your-sunday-best", "The mask—and the distance between appearance and reality."),
-      song("It’s Over", "its-over", "Release: leaving the old battlefield and refusing to live there anymore.")
+      song("Broken Me", "broken-me", "They told me who I was. The battle begins against the identity others assigned.", { video: "rhqsSV30VJc", lyrics: true }),
+      song("The Watchtower", "the-watchtower", "Discernment, isolation, and seeing what others refused to see.", { video: "w29av97bmKs", lyrics: true }),
+      song("It’s Over", "its-over", "Release: leaving the old battlefield and refusing to live there anymore.", { video: "SBnEiGgEpyU", lyrics: true }),
+      song("Whispers in the Ear", "whispers-in-the-ear", "How narratives travel before truth gets heard.", { video: "xQObiKvlsTk", lyrics: true }),
+      song("Stop Casting Stones", "stop-casting-stones", "The wounded confront those who judged without understanding.", { video: "W4QtQ_hhSg0", lyrics: true }),
+      song("Your Words are Echoes", "your-words-are-echoes", "The moment accusations stop controlling identity.", { video: "NqXb__tRKHk", lyrics: true }),
+      song("Borrowed Throne", "borrowed-throne", "False authority is exposed. No one gets to take God’s seat.", { video: "mNNBePWIqmk", lyrics: true }),
+      song("Your Sunday Best", "your-sunday-best", "The mask—and the distance between appearance and reality.", { video: "Q3TJHs0YXls", lyrics: true }),
+      song("What is Next", "what-is-next", "Repentance accepts consequence and asks God who the man must become now.", { video: "qql34ovgOus", lyrics: true })
     ]
   }),
   album({
@@ -63,6 +65,7 @@ const albums = [
     movement: "The Healing / Becoming Whole",
     question: "Who am I becoming now?",
     artwork: "assets/artwork/the-restoration-site-textless.png",
+    playlist: "https://www.youtube.com/playlist?list=PLDV_tezlXhbU",
     story: [
       "The Restoration was written about what happens after survival and confrontation—when the question is no longer only what happened, but who you are becoming now. These songs follow the ending of destructive cycles, the thawing of places that became numb, and the recovery of love as truth and grace rather than disappearance. They return to the well, to childlike dependence on the Father, and to the identity God intended before fear, shame, trauma, and other people’s expectations began competing for authorship.",
       "Restoration does not mean recovering the old life exactly as it was. Some former identities, defenses, dreams, and ways of surviving must be surrendered. That is the death and rebirth at the center of the album. Nothing placed on God’s altar is wasted—not grief, wreckage, memory, or the years spent wandering. The purpose of healing is not merely to feel better. It is to become capable of deeper love, honest surrender, mercy, and a life received from God rather than constructed from pain."
@@ -74,11 +77,11 @@ const albums = [
       song("Back to Me", "back-to-me", "Recovering who I was meant to be."),
       song("Still at the Well", "still-at-the-well", "Returning to the source—the place where life comes from."),
       song("Bring Back the Child in Me", "bring-back-the-child-in-me", "Returning to trust and dependence on the Father."),
-      song("Don’t Give Me Away Again", "dont-give-me-away-again", "Surrendering a wandering heart and asking not to be left to myself."),
+      song("Don’t Give Me Away Again", "dont-give-me-away-again", "Surrendering a wandering heart and asking not to be left to myself.", { lyrics: true }),
       song("No Waste at the Altar", "no-waste-at-the-altar", "Recognizing that God redeemed even the wreckage."),
       song("I Bow My Knees", "i-bow-my-knees", "Submitting everything back to Him."),
       song("You Still Call My Name", "you-still-call-my-name", "Receiving identity from God instead of people."),
-      song("By His Grace", "by-his-grace", "Living from the identity God has given me."),
+      song("By His Grace", "by-his-grace", "Living from the identity God has given me.", { lyrics: true }),
       song("Death Day", "death-day", "The former versions of me are laid down so I can receive the life God is giving me now.", { video: "sb0rdhJndpg", lyrics: true })
     ]
   }),
@@ -416,6 +419,12 @@ function setAlbumHeader() {
   if (routeTitle) routeTitle.textContent = activeAlbum.title;
   if (routeSubtitle) routeSubtitle.textContent = activeAlbum.subtitle;
   if (routeQuestion) routeQuestion.textContent = `“${activeAlbum.question}”`;
+  const playlistLink = document.querySelector("#album-playlist-link");
+  if (playlistLink) {
+    playlistLink.hidden = !activeAlbum.playlist;
+    playlistLink.href = activeAlbum.playlist || "#";
+    playlistLink.setAttribute("aria-label", `Play the complete ${activeAlbum.title} playlist on YouTube`);
+  }
   document.querySelector("#interactive-eyebrow").textContent = `Album ${activeAlbum.number} · ${activeAlbum.movement}`;
   document.querySelector("#interactive-title").textContent = activeAlbum.title;
   document.querySelector("#interactive-description").textContent = `“${activeAlbum.question}” Select a song to watch, listen, and read it in the context of the complete album.`;

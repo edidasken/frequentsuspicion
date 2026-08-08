@@ -1,17 +1,18 @@
-const CACHE_NAME = "frequentsuspicion-shell-v20-clean-green-white-type";
+const CACHE_NAME = "frequentsuspicion-shell-v23-published-catalog";
+
 const APP_SHELL = [
   "./",
   "./index.html",
   "./album.html",
   "./about.html",
-  "./styles.css?v=20260807-9",
+  "./styles.css?v=20260808-2",
   "./analytics.js?v=1",
-  "./app.js?v=20260807-3",
+  "./app.js?v=20260808-2",
   "./pillars.js?v=2",
   "./care.js?v=20260802-1",
   "./data/biblical-counseling.js",
   "./data/apologetics.js",
-  "./pwa.js?v=2",
+  "./pwa.js?v=4",
   "./accessibility.js?v=2",
   "./manifest.webmanifest",
   "./assets/og-four-album-journey.png",
@@ -24,8 +25,68 @@ const APP_SHELL = [
   "./assets/icons/pwa-512.png",
   "./assets/icons/pwa-maskable-512.png",
   "./assets/icons/apple-touch-icon.png",
-  "./assets/icons/favicon-32.png"
+  "./assets/icons/favicon-32.png",
+  "./lyrics/a-million-times-over.txt",
+  "./lyrics/a-prayer-to-the-god-of-my-life.txt",
+  "./lyrics/biblical-love.txt",
+  "./lyrics/birthright.txt",
+  "./lyrics/borrowed-throne.txt",
+  "./lyrics/break-me.txt",
+  "./lyrics/broken-me.txt",
+  "./lyrics/by-his-grace.txt",
+  "./lyrics/carry-it-forward.txt",
+  "./lyrics/confront-me-god.txt",
+  "./lyrics/covenant.txt",
+  "./lyrics/death-day.txt",
+  "./lyrics/dont-give-me-away-again.txt",
+  "./lyrics/every-day-was-sin.txt",
+  "./lyrics/its-over.txt",
+  "./lyrics/mend-the-broken-portrait.txt",
+  "./lyrics/my-dumpster-fire.txt",
+  "./lyrics/september-in-july.txt",
+  "./lyrics/shattered-lens.txt",
+  "./lyrics/shepherds-of-silence.txt",
+  "./lyrics/sleep-dont-come-easy.txt",
+  "./lyrics/stop-casting-stones.txt",
+  "./lyrics/teach-me-to-live.txt",
+  "./lyrics/the-battle-for-your-soul.txt",
+  "./lyrics/the-darkest-valley.txt",
+  "./lyrics/the-little-lukewarm-church.txt",
+  "./lyrics/the-man-behind-the-startle.txt",
+  "./lyrics/the-many-wolves-in-masks.txt",
+  "./lyrics/the-war-came-home.txt",
+  "./lyrics/the-watchtower.txt",
+  "./lyrics/what-is-next.txt",
+  "./lyrics/when-i-close-my-eyes.txt",
+  "./lyrics/when-the-night-goes-quiet.txt",
+  "./lyrics/whispers-in-the-ear.txt",
+  "./lyrics/wounded-but-still-going.txt",
+  "./lyrics/your-sunday-best.txt",
+  "./lyrics/your-words-are-echoes.txt"
 ];
+
+async function fetchAndCache(request) {
+  const response = await fetch(request);
+  if (response.ok) {
+    const cache = await caches.open(CACHE_NAME);
+    await cache.put(request, response.clone());
+  }
+  return response;
+}
+
+async function networkFirst(request, fallback = "") {
+  try {
+    return await fetchAndCache(request);
+  } catch {
+    const cached = await caches.match(request);
+    if (cached) return cached;
+    if (fallback) {
+      const fallbackResponse = await caches.match(fallback);
+      if (fallbackResponse) return fallbackResponse;
+    }
+    return Response.error();
+  }
+}
 
 self.addEventListener("install", event => {
   event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(APP_SHELL)));
@@ -34,35 +95,36 @@ self.addEventListener("install", event => {
 
 self.addEventListener("activate", event => {
   event.waitUntil(
-    caches.keys().then(keys => Promise.all(
-      keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key))
-    ))
+    caches.keys()
+      .then(keys => Promise.all(keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key))))
+      .then(() => self.clients.claim())
   );
-  self.clients.claim();
 });
 
 self.addEventListener("fetch", event => {
   const request = event.request;
-  if (request.method !== "GET" || new URL(request.url).origin !== self.location.origin) return;
+  if (request.method !== "GET") return;
+
+  const url = new URL(request.url);
+  if (url.origin !== self.location.origin) return;
 
   if (request.mode === "navigate") {
-    event.respondWith(
-      fetch(request).then(response => {
-        const copy = response.clone();
-        caches.open(CACHE_NAME).then(cache => cache.put(request, copy));
-        return response;
-      }).catch(() => caches.match(request).then(cached => cached || caches.match("./index.html")))
-    );
+    event.respondWith(networkFirst(request, "./index.html"));
+    return;
+  }
+
+  const mustStayFresh =
+    request.destination === "script" ||
+    request.destination === "style" ||
+    url.pathname.includes("/lyrics/") ||
+    url.pathname.endsWith("/manifest.webmanifest");
+
+  if (mustStayFresh) {
+    event.respondWith(networkFirst(request));
     return;
   }
 
   event.respondWith(
-    caches.match(request).then(cached => cached || fetch(request).then(response => {
-      if (response.ok) {
-        const copy = response.clone();
-        caches.open(CACHE_NAME).then(cache => cache.put(request, copy));
-      }
-      return response;
-    }))
+    caches.match(request).then(cached => cached || fetchAndCache(request))
   );
 });
