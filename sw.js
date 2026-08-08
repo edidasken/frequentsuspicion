@@ -1,4 +1,4 @@
-const CACHE_NAME = "frequentsuspicion-shell-v24-force-complete-catalog";
+const CACHE_NAME = "frequentsuspicion-shell-v25-feature-art";
 
 const APP_SHELL = [
   "./",
@@ -12,7 +12,7 @@ const APP_SHELL = [
   "./care.js?v=20260802-1",
   "./data/biblical-counseling.js",
   "./data/apologetics.js",
-  "./pwa.js?v=6",
+  "./pwa.js?v=7",
   "./accessibility.js?v=2",
   "./manifest.webmanifest",
   "./assets/og-four-album-journey.png",
@@ -20,6 +20,9 @@ const APP_SHELL = [
   "./assets/artwork/the-reckoning-site-textless.png",
   "./assets/artwork/the-restoration-site-textless.png",
   "./assets/artwork/carry-it-forward-site-textless.png",
+  "./assets/artwork/shattered-lens-feature-v2.webp",
+  "./assets/artwork/what-is-next-feature-v2.webp",
+  "./assets/artwork/carry-it-forward-feature-v2.webp",
   "./assets/greg-granger.png?v=566ef75",
   "./assets/icons/pwa-192.png",
   "./assets/icons/pwa-512.png",
