@@ -1,5 +1,5 @@
 if ("serviceWorker" in navigator) {
-  const release = "20260808-feature-art";
+  const release = "20260808-feature-badges";
   let refreshing = false;
 
   navigator.serviceWorker.addEventListener("controllerchange", () => {

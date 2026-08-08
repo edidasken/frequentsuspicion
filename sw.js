@@ -1,4 +1,4 @@
-const CACHE_NAME = "frequentsuspicion-shell-v25-feature-art";
+const CACHE_NAME = "frequentsuspicion-shell-v26-feature-badges";
 
 const APP_SHELL = [
   "./",
@@ -12,7 +12,7 @@ const APP_SHELL = [
   "./care.js?v=20260802-1",
   "./data/biblical-counseling.js",
   "./data/apologetics.js",
-  "./pwa.js?v=7",
+  "./pwa.js?v=8",
   "./accessibility.js?v=2",
   "./manifest.webmanifest",
   "./assets/og-four-album-journey.png",
